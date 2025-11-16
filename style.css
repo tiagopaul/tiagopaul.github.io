@@ -251,6 +251,16 @@ main {
     color: rgb(0, 90, 181);
 }
 
+.course-name a {
+    color: rgb(0, 90, 181); /* same as course-name text */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.course-name a:hover {
+    color: rgb(255, 82, 82); /* optional hover color */
+}
+
 .course-role-date {
     font-size: 0.95rem;
     font-weight: 500;
