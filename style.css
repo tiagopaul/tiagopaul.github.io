@@ -123,8 +123,9 @@ footer {
     }
 }
 
+/* Teaching page course boxes */
 .course-box {
-    background: #fff;
+    background-color: #fdfdfd;    /* slightly off-white */
     padding: 25px 30px;
     margin-bottom: 30px;
     border-radius: 8px;
@@ -150,9 +151,14 @@ footer {
     text-align: justify; /* matches your about page */
 }
 
-/* Optional: adjust main heading */
+/* Main heading style */
 main h1 {
     font-size: 2rem;
     margin-bottom: 30px;
     text-align: left;
+}
+
+/* Optional: page background to highlight boxes */
+body {
+    background-color: #f8f9fa;
 }
