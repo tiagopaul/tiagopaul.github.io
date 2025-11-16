@@ -52,8 +52,8 @@ header {
 
 /* Icon next to name */
 .site-icon {
-    height: 32px;     /* adjust size here */
-    width: 32px;      /* keep square */
+    height: 3px;     /* adjust size here */
+    width: 3px;      /* keep square */
     border-radius: 50%;
     object-fit: cover;
 }
