@@ -70,14 +70,14 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: bold;
+    font-family: 'Roboto Slab', Georgia, serif; /* Roboto Slab first, fallback to Georgia */
+    font-weight: 700;
     font-size: 1.6rem;
     color: white;
-    text-decoration: overline underline;  /* permanent overline + underline */
-    text-decoration-thickness: 2px;       /* optional: makes lines thicker */
-    text-underline-offset: 4px;           /* spacing for underline */
-    text-overline-offset: 2px;            /* spacing for overline */
+    text-decoration: overline underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-overline-offset: 2px;
 }
 
 .site-icon {
