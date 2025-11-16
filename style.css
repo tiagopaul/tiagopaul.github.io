@@ -22,17 +22,18 @@ header {
     justify-content: space-between;
 }
 
-header .container {
+.header-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 60px;
 }
 
-/* Name styling */
-.site-title {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 1.6rem;
+.site-name {
+    font-family: Georgia, 'Times New Roman', serif;
     font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
     color: #222;
 }
 
