@@ -203,7 +203,7 @@ main {
 .course-buttons .btn {
     padding: 10px 20px;
     border-radius: 6px;
-    background-color: rgba(21, 96, 130,5);
+    background-color: rgba(21, 96, 130,0.5);
     color: white;
     text-decoration: none;
     font-size: 0.95rem;
@@ -243,5 +243,5 @@ footer {
     margin-top: 60px;
     padding: 40px 0;
     color: white;
-    background: rgba(0,176,240,0.5);  /* 50% opacity header color */
+    background: rgba(21, 96, 130,0.5);  /* 50% opacity header color */
 }
