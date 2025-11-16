@@ -55,8 +55,8 @@ header {
 }
 
 .site-name .site-icon {
-    height: 28px;
-    width: 28px;
+    height: 40px;
+    width: auto;
     border-radius: 50%;   /* optional: makes it circular */
     object-fit: cover;
 }
