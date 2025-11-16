@@ -174,24 +174,33 @@ footer {
 
 .course-buttons .btn {
     display: inline-block;
-    padding: 6px 15px;
-    border-radius: 5px;
-    background-color: #0070f3;
+    padding: 10px 20px;           /* bigger padding for a box feel */
+    border-radius: 8px;           /* rounded corners */
+    background-color: #0070f3;    /* main color */
     color: white;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    transition: background-color 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow for a card look */
+    transition: all 0.2s;
 }
 
 .course-buttons .btn:hover {
     background-color: #005bb5;
+    transform: translateY(-2px); /* subtle lift effect */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 /* Responsive: stack buttons on small screens */
 @media (max-width: 500px) {
     .course-buttons {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .course-buttons .btn {
+        text-align: center;
+        width: 100%;
     }
 }
 
