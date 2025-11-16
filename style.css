@@ -54,11 +54,18 @@ header {
     font-size: 1.4rem;
 }
 
-.site-name .site-icon {
+.site-name {
     height: 40px;
     width: auto;
     border-radius: 50%;   /* optional: makes it circular */
     object-fit: cover;
+}
+
+.header-icon {
+    height: 60px;   /* change this number to make it bigger */
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 .site-name:hover {
