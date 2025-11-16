@@ -91,31 +91,38 @@ footer {
     padding: 0 20px;
 }
 
-.about-section {
+/* Layout: name + bio on left, photo on right */
+.intro-wrapper {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: flex-start;         /* aligns photo with name */
     gap: 40px;
     margin-top: 40px;
 }
 
-.about-text {
-    flex: 0 0 60%;
-    font-size: 1.05rem;
-    line-height: 1.6;
+/* Left side (name + role + bio) */
+.intro-left {
+    flex: 1;
+    text-align: justify;
 }
 
-.about-photo {
-    flex: 0 0 40%;
-    display: flex;
-    justify-content: flex-end;
+.home-name {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0 0 10px 0;
 }
 
-.about-photo img {
-    width: 100%;          /* image fits inside the 40% column */
-    max-width: 240px;     /* prevents it from becoming huge */
-    border-radius: 8px;   /* optional */
+.home-role {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Right side (photo) */
+.intro-photo img {
+    width: 330px;      /* enlarge this number if you want bigger */
     height: auto;
+    border-radius: 6px;
     object-fit: cover;
 }
 
