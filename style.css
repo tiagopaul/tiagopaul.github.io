@@ -118,9 +118,8 @@ footer {
     }
 }
 
-/* Teaching page course boxes */
 .course-box {
-    background-color: #fdfdfd;    /* slightly off-white */
+    background-color: #fdfdfd;
     padding: 25px 30px;
     margin-bottom: 30px;
     border-radius: 8px;
@@ -133,17 +132,67 @@ footer {
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-.course-box h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
+/* University name - small bold */
+.course-university {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #555;
+    text-transform: uppercase; /* optional */
+}
+
+/* Course name - big bold */
+.course-name {
+    margin: 0 0 5px 0;
+    font-size: 1.4rem;
+    font-weight: bold;
     color: #0070f3;
 }
 
-.course-box p {
-    margin: 0;
+/* Role and date */
+.course-role-date {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+/* Description */
+.course-description {
+    font-size: 1rem;
     line-height: 1.6;
-    text-align: justify; /* matches your about page */
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Buttons for syllabus, slides, etc. */
+.course-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.course-buttons .btn {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 5px;
+    background-color: #0070f3;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.course-buttons .btn:hover {
+    background-color: #005bb5;
+}
+
+/* Responsive: stack buttons on small screens */
+@media (max-width: 500px) {
+    .course-buttons {
+        flex-direction: column;
+    }
 }
 
 /* Main heading style */
