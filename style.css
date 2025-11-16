@@ -28,7 +28,7 @@ a {
    HEADER
 ----------------------------------------------------- */
 header {
-    background: white;
+    background: rgb(0, 176, 240);   /* your requested colour */
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
 }
@@ -45,7 +45,7 @@ header {
     font-weight: bold;
     font-size: 1.5rem;
     text-decoration: none;
-    color: #222;
+    color: white;
 }
 
 .site-name:hover {
@@ -55,7 +55,7 @@ header {
 .header-nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: #333;
+    color: white;
     font-weight: 500;
 }
 
