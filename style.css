@@ -37,7 +37,7 @@ a:hover {
    HEADER
 ----------------------------------------------------- */
 header {
-    background: rgb(21, 96, 130); /* requested header color */
+    background: rgb(21, 96, 130); /* header color */
     padding: 10px 0;
 }
 
@@ -48,24 +48,7 @@ header {
     height: 60px;
 }
 
-.header-nav a.active {
-    color: rgb(255,82,82);          /* reddish color */
-    text-decoration: overline underline; /* lines above and below */
-}
-
-.header-nav a:hover,
-.header-nav a.active {
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-    text-overline-offset: 2px;
-}
-
-/* Optional: keep hover consistent */
-.header-nav a.active:hover {
-    color: rgb(255,82,82);
-    text-decoration: overline underline;
-}
-
+/* Site name with icon */
 .site-name {
     display: flex;
     align-items: center;
@@ -74,10 +57,10 @@ header {
     font-weight: 700;
     font-size: 1.6rem;
     color: white;
-    
-    /* Overline + underline styling */
+
+    /* Always show overline + underline in red */
     text-decoration-line: overline underline;
-    text-decoration-color: rgb(255, 82, 82); /* always red */
+    text-decoration-color: rgb(255, 82, 82);
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
     text-overline-offset: 2px;
@@ -91,16 +74,22 @@ header {
 }
 
 .site-name:hover {
-    color: rgb(255, 82, 82);
+    color: rgb(255, 82, 82); /* text turns red on hover */
 }
 
+/* -----------------------------------------------------
+   NAVIGATION
+----------------------------------------------------- */
 .header-nav a {
     margin-left: 20px;
     font-weight: 500;
     color: white;
     position: relative;
+    text-decoration: none; /* remove default underline */
+    transition: color 0.2s;
 }
 
+/* Hover: red text + lines */
 .header-nav a:hover {
     color: rgb(255, 82, 82);
 }
@@ -116,11 +105,11 @@ header {
 }
 
 .header-nav a:hover::before { top: -3px; } /* overline */
-.header-nav a:hover::after { bottom: -3px; } /* underline */
+.header-nav a:hover::after  { bottom: -3px; } /* underline */
 
-/* Current page highlight */
+/* Active page: white text + red lines */
 .header-nav a.active {
-    color: rgb(255, 82, 82);
+    color: white;
 }
 
 .header-nav a.active::before,
@@ -134,7 +123,8 @@ header {
 }
 
 .header-nav a.active::before { top: -3px; }
-.header-nav a.active::after { bottom: -3px; }
+.header-nav a.active::after  { bottom: -3px; }
+
 
 /* -----------------------------------------------------
    MAIN CONTENT
