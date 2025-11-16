@@ -17,7 +17,6 @@ a {
     color: inherit;
 }
 
-/* General layout wrapper */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -28,8 +27,7 @@ a {
    HEADER
 ----------------------------------------------------- */
 header {
-    background: rgb(21, 96, 130);   /* your requested colour */
-    border-bottom: 1px solid #ddd;
+    background: rgb(0,176,240);
     padding: 10px 0;
 }
 
@@ -43,13 +41,13 @@ header {
 .site-name {
     font-family: Georgia, 'Times New Roman', serif;
     font-weight: bold;
-    font-size: 1.5rem;
-    text-decoration: none;
+    font-size: 1.7rem;
     color: white;
+    text-decoration: none;
 }
 
 .site-name:hover {
-    color: rbg(255, 82, 82);
+    color: rgb(255,82,82);
 }
 
 .header-nav a {
@@ -60,7 +58,7 @@ header {
 }
 
 .header-nav a:hover {
-    color: rbg(255, 82, 82);
+    color: rgb(255,82,82);
 }
 
 /* -----------------------------------------------------
@@ -71,7 +69,7 @@ main {
 }
 
 /* -----------------------------------------------------
-   HOME PAGE INTRO (name + role + bio + photo)
+   HOME INTRO SECTION
 ----------------------------------------------------- */
 .intro-wrapper {
     display: flex;
@@ -89,80 +87,66 @@ main {
     font-weight: bold;
     font-size: 3rem;
     margin: 0 0 10px 0;
-    line-height: 1.2;
 }
 
 .home-role {
     font-size: 1.2rem;
     color: #555;
-    margin: 0 0 25px 0;
+    margin-bottom: 25px;
 }
 
+/* Profile Photo */
 .intro-photo img {
     width: 330px;
-    height: auto;
     border-radius: 6px;
     object-fit: cover;
 }
 
-/* Contact Icons beneath the photo */
+/* -----------------------------------------------------
+   CONTACT ICONS
+----------------------------------------------------- */
 .contact-icons {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 15px;                 /* spacing between icons */
+    gap: 12px;
 }
 
 .icon-circle {
-    width: 48px;
-    height: 48px;
-    background: #0070f3;
-    color: white;
+    width: 36px;                 /* 75% of previous 48px */
+    height: 36px;
+    background: rgba(0,176,240,0.5);  /* 50% opacity of header color */
+    color: white;                /* icon color */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;           /* scaled down */
     text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
-    font-weight: bold;         /* needed for CV text */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.icon-circle:hover {
-    background: #005bb5;
-    transform: translateY(-3px);
-}
-
-/* CV "icon" specific tweaks */
-.cv-icon {
-    font-size: 1rem;           /* looks proportional inside circle */
-    letter-spacing: 0.5px;
-}
-
-.contact-icons a {
-    font-size: 1.6rem;
-    color: #444;
-    text-decoration: none;
+    font-weight: bold;
     transition: 0.2s;
 }
 
-.contact-icons a:hover {
-    color: #0070f3;
-    transform: translateY(-2px);
+.icon-circle:hover {
+    background: rgb(0,176,240);
+    transform: translateY(-3px);
 }
 
-/* Mobile: stack layout */
+/* CV circle text */
+.cv-icon {
+    font-size: 0.8rem;
+}
+
+/* Mobile */
 @media (max-width: 850px) {
     .intro-wrapper {
         flex-direction: column;
-        align-items: center;
         text-align: center;
+        align-items: center;
     }
 
     .intro-photo img {
         width: 240px;
-        margin-top: 20px;
     }
 }
 
@@ -170,17 +154,11 @@ main {
    COURSE / RESEARCH BOXES
 ----------------------------------------------------- */
 .course-box {
-    background-color: #fdfdfd;
+    background-color: #ffffff;
     padding: 25px 30px;
     margin-bottom: 30px;
     border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.course-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    border: 1px solid #e1e1e1;   /* soft border, no glow */
 }
 
 /* University name */
@@ -192,12 +170,12 @@ main {
     text-transform: uppercase;
 }
 
-/* Course name */
+/* Course name / Research title */
 .course-name {
     margin: 0 0 5px 0;
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     font-weight: bold;
-    color: #0070f3;
+    color: rgb(0,90,181);        /* requested blue */
 }
 
 /* Role + date */
@@ -205,15 +183,14 @@ main {
     font-size: 0.95rem;
     font-weight: 500;
     color: #333;
-    margin: 0 0 15px 0;
+    margin-bottom: 15px;
 }
 
 /* Description */
 .course-description {
     font-size: 1rem;
-    line-height: 1.6;
-    text-align: justify;
     margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 /* Buttons */
@@ -224,34 +201,38 @@ main {
 }
 
 .course-buttons .btn {
-    display: inline-block;
     padding: 10px 20px;
-    border-radius: 8px;
-    background-color: #0070f3;
+    border-radius: 6px;
+    background-color: rgb(0,90,181);
     color: white;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.2s;
+    transition: 0.2s;
 }
 
 .course-buttons .btn:hover {
-    background-color: #005bb5;
+    background-color: rgb(0,70,150);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* Mobile: full-width buttons */
 @media (max-width: 500px) {
     .course-buttons {
         flex-direction: column;
     }
-
     .course-buttons .btn {
         width: 100%;
         text-align: center;
     }
+}
+
+/* -----------------------------------------------------
+   PAGE HEADINGS
+----------------------------------------------------- */
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: rgb(0,90,181);
 }
 
 /* -----------------------------------------------------
@@ -261,13 +242,6 @@ footer {
     text-align: center;
     margin-top: 60px;
     padding: 40px 0;
-    color: #666;
-}
-
-/* -----------------------------------------------------
-   PAGE HEADINGS
------------------------------------------------------ */
-main h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+    color: white;
+    background: rgba(0,176,240,0.5);  /* 50% opacity header color */
 }
