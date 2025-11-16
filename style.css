@@ -5,6 +5,11 @@ body {
     color: #222;
 }
 
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 header {
     background: white;
     border-bottom: 1px solid #ddd;
