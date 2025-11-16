@@ -74,7 +74,7 @@ footer {
 
 .about-photo img {
     width: 100%;          /* image fits inside the 40% column */
-    max-width: 180px;     /* prevents it from becoming huge */
+    max-width: 240px;     /* prevents it from becoming huge */
     border-radius: 8px;   /* optional */
     height: auto;
     object-fit: cover;
