@@ -46,6 +46,21 @@ header {
     text-decoration: none;
 }
 
+.site-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.site-name .site-icon {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;   /* optional: makes it circular */
+    object-fit: cover;
+}
+
 .site-name:hover {
     color: rgb(255,82,82);
 }
