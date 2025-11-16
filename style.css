@@ -105,10 +105,39 @@ main {
     object-fit: cover;
 }
 
+/* Contact Icons beneath the photo */
 .contact-icons {
-    margin-top: 15px;
+    margin-top: 20px;
     display: flex;
-    gap: 15px;
+    justify-content: center;
+    gap: 15px;                 /* spacing between icons */
+}
+
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    background: #0070f3;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    font-weight: bold;         /* needed for CV text */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.icon-circle:hover {
+    background: #005bb5;
+    transform: translateY(-3px);
+}
+
+/* CV "icon" specific tweaks */
+.cv-icon {
+    font-size: 1rem;           /* looks proportional inside circle */
+    letter-spacing: 0.5px;
 }
 
 .contact-icons a {
