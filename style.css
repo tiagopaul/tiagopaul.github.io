@@ -61,9 +61,9 @@ header {
     /* Always show overline + underline in red */
     text-decoration-line: underline;
     text-decoration-color: rgb(255, 82, 82);
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 4px;
     text-underline-offset: 4px;
-    text-overline-offset: 2px;
+    text-overline-offset: 4px;
 }
 
 .site-icon {
