@@ -201,7 +201,7 @@ main {
 }
 
 .course-image img {
-    width: 120px;        /* adjust size */
+    width: 500px;        /* adjust size */
     height: auto;
     border-radius: 8px;  /* optional */
     object-fit: cover;
