@@ -1,7 +1,10 @@
+/* -----------------------------------------------------
+   GLOBAL
+----------------------------------------------------- */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #fafafa;
+    background-color: #f8f9fa;
     color: #222;
 }
 
@@ -10,6 +13,20 @@ p {
     text-justify: inter-word;
 }
 
+a {
+    color: inherit;
+}
+
+/* General layout wrapper */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -----------------------------------------------------
+   HEADER
+----------------------------------------------------- */
 header {
     background: white;
     border-bottom: 1px solid #ddd;
@@ -19,21 +36,20 @@ header {
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* keeps nav on the right */
+    justify-content: space-between;
     height: 60px;
-    padding: 0 20px; /* optional horizontal padding */
 }
 
 .site-name {
-    font-family: Georgia, 'Times New Roman', serif; /* serif font */
+    font-family: Georgia, 'Times New Roman', serif;
     font-weight: bold;
     font-size: 1.5rem;
-    text-decoration: none; /* removes underline */
+    text-decoration: none;
     color: #222;
 }
 
 .site-name:hover {
-    color: #0070f3; /* optional hover effect */
+    color: #0070f3;
 }
 
 .header-nav a {
@@ -47,62 +63,25 @@ header {
     color: #0070f3;
 }
 
+/* -----------------------------------------------------
+   MAIN CONTENT
+----------------------------------------------------- */
 main {
-    max-width: 90%;
     margin: 40px auto;
-    padding: 0 20px;
 }
 
-.home-intro {
-    text-align: center;
-    margin: 60px 0 40px 0; /* spacing above and below */
-}
-
-.home-name {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: bold;
-    font-size: 3rem;  /* large name */
-    margin: 0;
-    line-height: 1.2;
-}
-
-.home-role {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 10px 0 0 0;
-}
-
-.profile-pic {
-    width: 140px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 60px;
-    padding: 40px 0;
-    color: #666;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Layout: name + bio on left, photo on right */
+/* -----------------------------------------------------
+   HOME PAGE INTRO (name + role + bio + photo)
+----------------------------------------------------- */
 .intro-wrapper {
     display: flex;
-    align-items: flex-start;         /* aligns photo with name */
+    align-items: flex-start;
     gap: 40px;
     margin-top: 40px;
 }
 
-/* Left side (name + role + bio) */
 .intro-left {
     flex: 1;
-    text-align: justify;
 }
 
 .home-name {
@@ -110,40 +89,39 @@ footer {
     font-weight: bold;
     font-size: 3rem;
     margin: 0 0 10px 0;
+    line-height: 1.2;
 }
 
 .home-role {
     font-size: 1.2rem;
     color: #555;
-    margin-bottom: 25px;
+    margin: 0 0 25px 0;
 }
 
-/* Right side (photo) */
 .intro-photo img {
-    width: 330px;      /* enlarge this number if you want bigger */
+    width: 330px;
     height: auto;
     border-radius: 6px;
     object-fit: cover;
 }
 
-/* Responsive behaviour */
-@media (max-width: 800px) {
-    .about-section {
+/* Mobile: stack layout */
+@media (max-width: 850px) {
+    .intro-wrapper {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .about-text, .about-photo {
-        flex: 0 0 100%;
-    }
-
-    .about-photo img {
-        max-width: 150px;
+    .intro-photo img {
+        width: 240px;
         margin-top: 20px;
     }
 }
 
+/* -----------------------------------------------------
+   COURSE / RESEARCH BOXES
+----------------------------------------------------- */
 .course-box {
     background-color: #fdfdfd;
     padding: 25px 30px;
@@ -158,16 +136,16 @@ footer {
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-/* University name - small bold */
+/* University name */
 .course-university {
     font-size: 0.85rem;
     font-weight: bold;
     margin: 0 0 5px 0;
     color: #555;
-    text-transform: uppercase; /* optional */
+    text-transform: uppercase;
 }
 
-/* Course name - big bold */
+/* Course name */
 .course-name {
     margin: 0 0 5px 0;
     font-size: 1.4rem;
@@ -175,7 +153,7 @@ footer {
     color: #0070f3;
 }
 
-/* Role and date */
+/* Role + date */
 .course-role-date {
     font-size: 0.95rem;
     font-weight: 500;
@@ -191,7 +169,7 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Buttons for syllabus, slides, etc. */
+/* Buttons */
 .course-buttons {
     display: flex;
     gap: 10px;
@@ -200,44 +178,49 @@ footer {
 
 .course-buttons .btn {
     display: inline-block;
-    padding: 10px 20px;           /* bigger padding for a box feel */
-    border-radius: 8px;           /* rounded corners */
-    background-color: #0070f3;    /* main color */
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #0070f3;
     color: white;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow for a card look */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: all 0.2s;
 }
 
 .course-buttons .btn:hover {
     background-color: #005bb5;
-    transform: translateY(-2px); /* subtle lift effect */
+    transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* Responsive: stack buttons on small screens */
+/* Mobile: full-width buttons */
 @media (max-width: 500px) {
     .course-buttons {
         flex-direction: column;
-        align-items: stretch;
     }
 
     .course-buttons .btn {
-        text-align: center;
         width: 100%;
+        text-align: center;
     }
 }
 
-/* Main heading style */
+/* -----------------------------------------------------
+   FOOTER
+----------------------------------------------------- */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px 0;
+    color: #666;
+}
+
+/* -----------------------------------------------------
+   PAGE HEADINGS
+----------------------------------------------------- */
 main h1 {
     font-size: 2rem;
     margin-bottom: 30px;
-    text-align: left;
-}
-
-/* Optional: page background to highlight boxes */
-body {
-    background-color: #f8f9fa;
 }
