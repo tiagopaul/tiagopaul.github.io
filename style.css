@@ -38,40 +38,32 @@ header {
     height: 60px;
 }
 
-.site-name {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: bold;
-    font-size: 1.7rem;
-    color: white;
-    text-decoration: none;
-}
-
+/* Site name + icon wrapper */
 .site-name {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: 700;
-    font-size: 1.4rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: white;
+    text-decoration: none;
 }
 
-.site-name {
-    height: 40px;
-    width: auto;
-    border-radius: 50%;   /* optional: makes it circular */
+/* Icon next to name */
+.site-icon {
+    height: 32px;     /* adjust size here */
+    width: 32px;      /* keep square */
+    border-radius: 50%;
     object-fit: cover;
 }
 
-.header-icon {
-    height: 60px;   /* change this number to make it bigger */
-    width: auto;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
+/* Hover effect on your name */
 .site-name:hover {
-    color: rgb(255,82,82);
+    color: rgb(255, 82, 82);
 }
 
+/* Navigation links */
 .header-nav a {
     margin-left: 20px;
     text-decoration: none;
@@ -80,7 +72,7 @@ header {
 }
 
 .header-nav a:hover {
-    color: rgb(255,82,82);
+    color: rgb(255, 82, 82);
 }
 
 /* -----------------------------------------------------
