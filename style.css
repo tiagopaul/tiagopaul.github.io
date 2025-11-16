@@ -27,7 +27,7 @@ a {
    HEADER
 ----------------------------------------------------- */
 header {
-    background: rgb(0,176,240);
+    background: rgb(21, 96, 130);
     padding: 10px 0;
 }
 
@@ -115,7 +115,7 @@ main {
 .icon-circle {
     width: 36px;                 /* 75% of previous 48px */
     height: 36px;
-    background: rgba(0,176,240,0.5);  /* 50% opacity of header color */
+    background: rgba(21, 96, 130,0.5);  /* 50% opacity of header color */
     color: white;                /* icon color */
     border-radius: 50%;
     display: flex;
@@ -128,7 +128,7 @@ main {
 }
 
 .icon-circle:hover {
-    background: rgb(0,176,240);
+    background: rgb(21, 96, 130);
     transform: translateY(-3px);
 }
 
@@ -203,7 +203,7 @@ main {
 .course-buttons .btn {
     padding: 10px 20px;
     border-radius: 6px;
-    background-color: rgb(0,90,181);
+    background-color: rgba(21, 96, 130,5);
     color: white;
     text-decoration: none;
     font-size: 0.95rem;
@@ -212,7 +212,7 @@ main {
 }
 
 .course-buttons .btn:hover {
-    background-color: rgb(0,70,150);
+    background-color: rgb(21, 96, 130);
     transform: translateY(-2px);
 }
 
@@ -232,7 +232,7 @@ main {
 main h1 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: rgb(0,90,181);
+    color: black;
 }
 
 /* -----------------------------------------------------
