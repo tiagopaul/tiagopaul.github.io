@@ -70,11 +70,14 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: 'Roboto Slab', Georgia, serif; /* Roboto Slab first, fallback to Georgia */
+    font-family: 'Roboto Slab', Georgia, serif;
     font-weight: 700;
     font-size: 1.6rem;
     color: white;
-    text-decoration: overline underline;
+    
+    /* Overline + underline styling */
+    text-decoration-line: overline underline;
+    text-decoration-color: rgb(255, 82, 82); /* always red */
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
     text-overline-offset: 2px;
