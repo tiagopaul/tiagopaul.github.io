@@ -25,27 +25,30 @@ header {
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* keeps nav on the right */
     height: 60px;
 }
 
 .site-name {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: Georgia, 'Times New Roman', serif; /* serif font */
     font-weight: bold;
     font-size: 1.5rem;
-    text-decoration: none;
+    text-decoration: none; /* removes underline */
     color: #222;
 }
 
-/* Navigation */
-nav a {
-    margin-left: 25px;
+.site-name:hover {
+    color: #0070f3; /* optional hover effect */
+}
+
+.header-nav a {
+    margin-left: 20px;
     text-decoration: none;
     color: #333;
     font-weight: 500;
 }
 
-nav a:hover {
+.header-nav a:hover {
     color: #0070f3;
 }
 
