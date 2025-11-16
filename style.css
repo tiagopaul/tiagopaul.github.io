@@ -175,6 +175,12 @@ main {
     border: 1px solid #e1e1e1;   /* soft border, no glow */
 }
 
+.course-content {
+    display: flex;
+    align-items: flex-start; /* aligns top edges of text and image */
+    gap: 20px;               /* spacing between text and image */
+}
+
 /* University name */
 .course-university {
     font-size: 0.85rem;
