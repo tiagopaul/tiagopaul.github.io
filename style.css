@@ -48,6 +48,17 @@ header {
     height: 60px;
 }
 
+.header-nav a.active {
+    color: rgb(255,82,82);          /* reddish color */
+    text-decoration: overline underline; /* lines above and below */
+}
+
+/* Optional: keep hover consistent */
+.header-nav a.active:hover {
+    color: rgb(255,82,82);
+    text-decoration: overline underline;
+}
+
 .site-name {
     display: flex;
     align-items: center;
