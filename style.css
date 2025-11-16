@@ -53,6 +53,25 @@ main {
     padding: 0 20px;
 }
 
+.home-intro {
+    text-align: center;
+    margin: 60px 0 40px 0; /* spacing above and below */
+}
+
+.home-name {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 3rem;  /* large name */
+    margin: 0;
+    line-height: 1.2;
+}
+
+.home-role {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0 0 0;
+}
+
 .profile-pic {
     width: 140px;
     border-radius: 50%;
