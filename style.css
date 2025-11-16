@@ -53,6 +53,13 @@ header {
     text-decoration: overline underline; /* lines above and below */
 }
 
+.header-nav a:hover,
+.header-nav a.active {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-overline-offset: 2px;
+}
+
 /* Optional: keep hover consistent */
 .header-nav a.active:hover {
     color: rgb(255,82,82);
