@@ -221,7 +221,14 @@ main {
     padding: 25px 30px;
     margin-bottom: 30px;
     border-radius: 8px;
-    border: 1px solid #e1e1e1; /* no glow */
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* subtle shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* slightly stronger on hover */
 }
 
 .course-content {
