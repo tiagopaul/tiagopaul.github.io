@@ -16,17 +16,12 @@ header {
     padding: 10px 0;
 }
 
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between; /* keeps nav on the right */
     height: 60px;
+    padding: 0 20px; /* optional horizontal padding */
 }
 
 .site-name {
