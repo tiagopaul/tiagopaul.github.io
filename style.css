@@ -292,7 +292,8 @@ main {
 }
 
 .course-buttons .btn:hover {
-    background-color: rgb(21, 96, 130);
+    background-color: rgb(21, 96, 130); /* existing */
+    color: rgb(255, 82, 82);           /* add this line */
     transform: translateY(-2px);
 }
 
