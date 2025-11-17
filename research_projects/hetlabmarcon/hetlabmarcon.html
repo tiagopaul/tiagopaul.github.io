@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heterogeneous Labour Market Concentration | Tiago Paúl</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="icon" type="image/png" href="../../personal_files/tp_icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <div class="container header-container">
+        <a href="../../index.html" class="site-name">
+            <img src="../../personal_files/tp_icon.png" alt="" class="site-icon">
+            Tiago Paúl
+        </a>
+        <nav class="header-nav">
+            <a href="../../index.html">Home</a>
+            <a href="../../research.html" class="active">Research</a>
+            <a href="../../teaching.html">Teaching</a>
+            <a href="../../media.html">Media</a>
+            <a href="../../personal_files/TiagoPaul_CV.pdf" target="_blank">CV</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+
+        <!-- Paper Title -->
+        <h1 style="text-align: center; margin-bottom: 30px;">
+            Heterogeneous Labour Market Concentration and Minimum Wage Policy
+        </h1>
+
+        <!-- Buttons (same style as course box) -->
+        <div class="course-buttons" style="justify-content: center; margin-bottom: 30px;">
+            <a href="hetlabmarcon.pdf" target="_blank" class="btn">Current Draft</a>
+            <a href="slides_hetlabmarcon.pdf" target="_blank" class="btn">Slides</a>
+            <a href="msc_hetlabmarcon.pdf" target="_blank" class="btn">Master's Thesis</a>
+        </div>
+
+        <!-- Abstract + Carousel side-by-side -->
+        <div class="course-box" style="display: flex; gap: 30px; align-items: flex-start;">
+
+            <!-- Abstract -->
+            <div style="flex: 2;">
+                <h2>Abstract</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id facilisis lectus.
+                    Donec vitae suscipit massa. Vestibulum ante ipsum primis in faucibus orci luctus et
+                    ultrices posuere cubilia curae; Suspendisse urna arcu, volutpat quis lorem sed,
+                    condimentum aliquet augue. Pellentesque habitant morbi tristique senectus et netus et
+                    malesuada fames ac turpis egestas.
+                </p>
+            </div>
+
+            <!-- Carousel -->
+            <div style="flex: 1;">
+                <div class="carousel">
+                    <img src="img1_placeholder.jpg" alt="Slide 1" class="carousel-img">
+                    <img src="img2_placeholder.jpg" alt="Slide 2" class="carousel-img" style="display:none;">
+                    <img src="img3_placeholder.jpg" alt="Slide 3" class="carousel-img" style="display:none;">
+
+                    <button class="carousel-btn prev">❮</button>
+                    <button class="carousel-btn next">❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Presentations Box -->
+        <section class="course-box" style="margin-top: 40px;">
+            <h2>Presentations</h2>
+
+            <h3>Past</h3>
+            <ul>
+                <li>Conference A (2023)</li>
+                <li>Seminar B (2023)</li>
+                <li>Workshop C (2024)</li>
+            </ul>
+
+            <h3>Upcoming</h3>
+            <ul>
+                <li>Conference D (2025)</li>
+                <li>Seminar E (2025)</li>
+            </ul>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Tiago Paúl</p>
+    </div>
+</footer>
+
+<!-- Minimal JS for Carousel -->
+<script>
+const slides = document.querySelectorAll('.carousel-img');
+let index = 0;
+
+function showSlide(i) {
+    slides.forEach((s, n) => s.style.display = n === i ? 'block' : 'none');
+}
+
+function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+
+function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+}
+
+document.querySelector('.next').onclick = nextSlide;
+document.querySelector('.prev').onclick = prevSlide;
+</script>
+
+</body>
+</html>
