@@ -367,3 +367,31 @@ footer {
     color: white;
     background: rgba(21, 96, 130, 0.5); /* 50% opacity of header */
 }
+
+
+.presentations-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.presentations-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.calendar-icon {
+    width: 18px;
+    height: 18px;
+    fill: rgb(21, 96, 130); /* same color theme you’re using elsewhere */
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.presentation-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
