@@ -407,6 +407,10 @@ footer {
 .carousel-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* or "cover" if you want edge-to-edge */
+    object-fit: contain;
+    display: none;              /* <-- important */
+}
+
+.carousel-img:first-child {
     display: block;
 }
