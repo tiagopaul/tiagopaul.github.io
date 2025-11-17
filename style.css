@@ -73,10 +73,6 @@ header {
     object-fit: cover;
 }
 
-.site-name:hover {
-    color: rgb(255, 82, 82); /* text turns red on hover */
-}
-
 /* -----------------------------------------------------
    NAVIGATION
 ----------------------------------------------------- */
