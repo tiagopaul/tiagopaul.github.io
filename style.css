@@ -281,7 +281,6 @@ main {
 }
 
 .course-image a:hover img {
-    transform: translateY(-2px);   /* lifts the image up slightly */
     box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* optional shadow for depth */
 }
 
