@@ -276,6 +276,15 @@ main {
     object-fit: cover;
 }
 
+.course-image a img {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-image a:hover img {
+    transform: translateY(-5px);   /* lifts the image up slightly */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* optional shadow for depth */
+}
+
 /* Description */
 .course-description {
     font-size: 1rem;
