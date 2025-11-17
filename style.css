@@ -385,7 +385,7 @@ footer {
 }
 
 .footer-image {
-    height: 40px; /* Adjust height as needed */
+    width: 80px
     width: auto;
 }
 
