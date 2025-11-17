@@ -2,79 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta-name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heterogeneous Labour Market Concentration | Tiago Paúl</title>
-
-    <!-- Your CSS file -->
     <link rel="stylesheet" href="../../style.css" />
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../personal_files/tp_icon.png" />
-
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-
-    <style>
-        /* ---- Carousel local styles (safe to keep here) ---- */
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 350px;
-            height: 250px;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: none;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Caption appears ON TOP of the image */
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 6px 10px;
-            font-size: 0.85rem;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            text-align: center;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.4);
-            border: none;
-            color: white;
-            font-size: 1.4rem;
-            padding: 6px 10px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .carousel-btn:hover {
-            background: rgba(0,0,0,0.7);
-        }
-
-        .carousel-btn.prev {
-            left: 5px;
-        }
-
-        .carousel-btn.next {
-            right: 5px;
-        }
-    </style>
 </head>
 
 <body>
@@ -97,58 +29,63 @@
 <main>
     <div class="container">
 
+        <!-- Paper Title -->
         <h1 style="text-align: center; margin-bottom: 30px;">
             Heterogeneous Labour Market Concentration and Minimum Wage Policy
         </h1>
 
+        <!-- Buttons (same style as course box) -->
         <div class="course-buttons" style="justify-content: center; margin-bottom: 30px;">
             <a href="hetlabmarcon.pdf" target="_blank" class="btn">Current Draft</a>
             <a href="slides_hetlabmarcon.pdf" target="_blank" class="btn">Slides</a>
             <a href="msc_hetlabmarcon.pdf" target="_blank" class="btn">Master's Thesis</a>
         </div>
 
+        <!-- Abstract + Carousel side-by-side -->
         <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 40px;">
 
             <!-- Abstract -->
             <div style="flex: 2;">
                 <h2>Abstract</h2>
                 <p>
-                    This paper empirically tests whether minimum wages may have positive employment effects when
-                    diverging from a perfect competition framework. I use administrative data from 1986 to 2013 to
-                    segment Portugal into several local labour markets and construct Herfindahl–Hirschman Indices to
-                    measure concentration levels in each market. I find that increased minimum wage exposure has
-                    differential employment effects depending on labour market concentration…
+                    This paper empirically tests whether minimum wages may have positive employment effects when diverging from a perfect competition framework. I use administrative data from 1986 to 2013 to segment Portugal into several local labour markets and construct Herfindahl–Hirschman Indices to measure concentration levels in each market. I find that increased minimum wage exposure has differential employment effects depending on labour market concentration - estimates indicate employment responds negatively in highly competitive markets and positively in highly concentrated ones. These results are robust to the usage of instrumental variables and to different definitions of local labour markets, although the persistence of these effects varies across specifications. Labour markets are highly heterogeneous in their concentration level, which can help reconcile the conflicting results in the minimum wage literature and provide new policy insights.
                 </p>
             </div>
 
             <!-- Carousel -->
             <div style="flex: 1;">
                 <div class="carousel">
-
-                    <div class="carousel-slide" style="display:block;">
-                        <img src="iv_plot_website.png">
-                        <div class="carousel-caption">Employment response to a 1 std. dev. MW exposure</div>
-                    </div>
-
                     <div class="carousel-slide">
-                        <img src="dynamic_website.png">
-                        <div class="carousel-caption">Cumulative response to MW exposure</div>
+                        <img src="iv_plot_website.png"
+                             class="carousel-img">
+                        <div class="carousel-caption">
+                            Employment response to a 1 std. dev. minimum wage increase
+                        </div>
                     </div>
-
-                    <div class="carousel-slide">
-                        <img src="model_mw_effect_elast.png">
-                        <div class="carousel-caption">Model-based MW elasticity</div>
+                
+                    <div class="carousel-slide" style="display:none;">
+                        <img src="dynamic_website.png"
+                             class="carousel-img">
+                        <div class="carousel-caption">
+                            Cumulative employment response
+                        </div>
                     </div>
-
+                
+                    <div class="carousel-slide" style="display:none;">
+                        <img src="model_mw_effect_elast.png"
+                             class="carousel-img">
+                        <div class="carousel-caption">
+                            Model-implied minimum wage elasticity
+                        </div>
+                    </div>
+                
                     <button class="carousel-btn prev">❮</button>
                     <button class="carousel-btn next">❯</button>
                 </div>
             </div>
-
         </div>
 
-
-        <!-- Presentations -->
+        <!-- Presentations Box -->
         <section class="course-box" style="margin-top: 40px;">
             <h2>Presentations</h2>
             <ul class="presentations-list">
@@ -175,28 +112,27 @@
     </div>
 </footer>
 
-<!-- ---------------------------------------
-     JAVASCRIPT — KEEP IT HERE AT THE BOTTOM
----------------------------------------- -->
+<!-- Minimal JS for Carousel -->
 <script>
-const slides = document.querySelectorAll(".carousel-slide");
+const slides = document.querySelectorAll('.carousel-img');
 let index = 0;
 
 function showSlide(i) {
-    slides.forEach((s, n) => {
-        s.style.display = n === i ? "block" : "none";
-    });
+    slides.forEach((s, n) => s.style.display = n === i ? 'block' : 'none');
 }
 
-document.querySelector(".next").addEventListener("click", () => {
+function nextSlide() {
     index = (index + 1) % slides.length;
     showSlide(index);
-});
+}
 
-document.querySelector(".prev").addEventListener("click", () => {
+function prevSlide() {
     index = (index - 1 + slides.length) % slides.length;
     showSlide(index);
-});
+}
+
+document.querySelector('.next').onclick = nextSlide;
+document.querySelector('.prev').onclick = prevSlide;
 </script>
 
 </body>
