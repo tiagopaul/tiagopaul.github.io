@@ -64,43 +64,48 @@
             <!-- Carousel -->
             <div style="flex: 1;">
                 <div class="carousel">
-        
+            
                     <div class="carousel-slide active">
-                        <div class="carousel-caption">
-                            Employment response to a 1 std. dev. minimum wage increase
+                        <div class="carousel-caption-nav">
+                            <button class="carousel-btn prev">❮</button>
+                            <div class="carousel-caption">
+                                Employment response to a 1 std. dev. minimum wage increase
+                            </div>
+                            <button class="carousel-btn next">❯</button>
                         </div>
                         <div class="carousel-image-wrapper">
                             <img src="iv_plot_website.png" class="carousel-img">
                         </div>
                     </div>
-        
+            
                     <div class="carousel-slide">
-                        <div class="carousel-caption">
-                            Cumulative employment response
+                        <div class="carousel-caption-nav">
+                            <button class="carousel-btn prev">❮</button>
+                            <div class="carousel-caption">
+                                Cumulative employment response
+                            </div>
+                            <button class="carousel-btn next">❯</button>
                         </div>
                         <div class="carousel-image-wrapper">
                             <img src="dynamic_website.png" class="carousel-img">
                         </div>
                     </div>
-        
+            
                     <div class="carousel-slide">
-                        <div class="carousel-caption">
-                            Model-implied minimum wage elasticity
+                        <div class="carousel-caption-nav">
+                            <button class="carousel-btn prev">❮</button>
+                            <div class="carousel-caption">
+                                Model-implied minimum wage elasticity
+                            </div>
+                            <button class="carousel-btn next">❯</button>
                         </div>
                         <div class="carousel-image-wrapper">
                             <img src="model_mw_effect_elast.png" class="carousel-img">
                         </div>
                     </div>
-        
-                    <div class="carousel-controls">
-                        <button class="carousel-btn prev">❮</button>
-                        <button class="carousel-btn next">❯</button>
-                    </div>
-        
+            
                 </div>
             </div>
-        
-        </div> <!-- END abstract+carousel flex box -->
         
         
         <!-- Presentations Box (now correctly below) -->
@@ -141,15 +146,21 @@ function showSlide(i) {
     );
 }
 
-document.querySelector('.next').onclick = () => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-};
+// Handle all next buttons
+document.querySelectorAll('.next').forEach(btn => {
+    btn.onclick = () => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    };
+});
 
-document.querySelector('.prev').onclick = () => {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-};
+// Handle all prev buttons
+document.querySelectorAll('.prev').forEach(btn => {
+    btn.onclick = () => {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+    };
+});
 </script>
 
 </body>
