@@ -55,35 +55,41 @@
             <!-- Carousel -->
             <div style="flex: 1;">
                 <div class="carousel">
-                    <div class="carousel-slide">
-                        <img src="iv_plot_website.png"
-                             class="carousel-img">
+            
+                    <div class="carousel-slide active">
                         <div class="carousel-caption">
                             Employment response to a 1 std. dev. minimum wage increase
                         </div>
+                        <div class="carousel-image-wrapper">
+                            <img src="iv_plot_website.png" class="carousel-img">
+                        </div>
                     </div>
-                
-                    <div class="carousel-slide" style="display:none;">
-                        <img src="dynamic_website.png"
-                             class="carousel-img">
+            
+                    <div class="carousel-slide">
                         <div class="carousel-caption">
                             Cumulative employment response
                         </div>
+                        <div class="carousel-image-wrapper">
+                            <img src="dynamic_website.png" class="carousel-img">
+                        </div>
                     </div>
-                
-                    <div class="carousel-slide" style="display:none;">
-                        <img src="model_mw_effect_elast.png"
-                             class="carousel-img">
+            
+                    <div class="carousel-slide">
                         <div class="carousel-caption">
                             Model-implied minimum wage elasticity
                         </div>
+                        <div class="carousel-image-wrapper">
+                            <img src="model_mw_effect_elast.png" class="carousel-img">
+                        </div>
                     </div>
-                
-                    <button class="carousel-btn prev">❮</button>
-                    <button class="carousel-btn next">❯</button>
+            
+                    <!-- arrows BELOW the image -->
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev">❮</button>
+                        <button class="carousel-btn next">❯</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <!-- Presentations Box -->
         <section class="course-box" style="margin-top: 40px;">
@@ -114,25 +120,24 @@
 
 <!-- Minimal JS for Carousel -->
 <script>
-const slides = document.querySelectorAll('.carousel-img');
+const slides = document.querySelectorAll('.carousel-slide');
 let index = 0;
 
 function showSlide(i) {
-    slides.forEach((s, n) => s.style.display = n === i ? 'block' : 'none');
+    slides.forEach((s, n) =>
+        s.classList.toggle('active', n === i)
+    );
 }
 
-function nextSlide() {
+document.querySelector('.next').onclick = () => {
     index = (index + 1) % slides.length;
     showSlide(index);
-}
+};
 
-function prevSlide() {
+document.querySelector('.prev').onclick = () => {
     index = (index - 1 + slides.length) % slides.length;
     showSlide(index);
-}
-
-document.querySelector('.next').onclick = nextSlide;
-document.querySelector('.prev').onclick = prevSlide;
+};
 </script>
 
 </body>
