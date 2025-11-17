@@ -416,18 +416,19 @@ footer {
 .carousel-caption-nav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
+    justify-content: space-between; /* Changed from center */
+    gap: 10px;
     margin-bottom: 8px;
-    min-height: 48px; /* Prevents jumping - accommodates 2 lines */
+    min-height: 48px;
+    width: 100%; /* Ensure full width */
 }
 
 .carousel-caption {
     font-size: 0.9rem;
     color: #444;
     text-align: center;
-    flex: 0 1 auto;
-    max-width: 70%; /* Leaves room for arrows */
+    flex: 1; /* Changed to take up all available space */
+    padding: 0 10px; /* Add some padding from buttons */
 }
 
 /* Navigation arrows beside caption */
