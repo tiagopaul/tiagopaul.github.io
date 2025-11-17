@@ -325,6 +325,22 @@ main {
     }
 }
 
+@media (max-width: 500px) {
+
+    /* Reduce horizontal padding inside the box */
+    .course-box {
+        padding: 20px;
+    }
+
+    /* Make buttons smaller and ensure they never overflow */
+    .course-buttons .btn {
+        width: 100%;
+        padding: 8px 12px;      /* smaller padding */
+        font-size: 0.9rem;      /* slightly smaller text */
+        box-sizing: border-box; /* prevents overflow */
+    }
+}
+
 @media (max-width: 700px) {
     .course-content {
         flex-direction: column;
