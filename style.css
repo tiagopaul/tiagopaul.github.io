@@ -534,7 +534,7 @@ footer {
     }
     
     .presentations-list a {
-        word-break: break-all; /* Force long links to break */
+        word-break: break-word
     }
     
     /* Reduce padding on mobile for more space */
