@@ -587,3 +587,31 @@ footer {
 .carousel-controls {
     display: none;
 }
+
+/* Abstract and carousel container */
+.abstract-carousel-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.abstract-carousel-container > div:first-child {
+    flex: 2;
+}
+
+.abstract-carousel-container > div:last-child {
+    flex: 1;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 850px) {
+    .abstract-carousel-container {
+        flex-direction: column;
+    }
+    
+    .abstract-carousel-container > div {
+        width: 100%;
+        flex: unset;
+    }
+}
