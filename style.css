@@ -529,6 +529,7 @@ footer {
 /* Fix presentation box overflow on mobile */
 @media (max-width: 500px) {
     .presentations-list {
+      font-size: 0.9rem; /* Slightly smaller text */
         word-break: break-word;
         overflow-wrap: break-word;
     }
@@ -539,7 +540,7 @@ footer {
     
     /* Reduce padding on mobile for more space */
     .course-box {
-        padding: 20px 15px;
+        padding: 20px;
     }
 }
 
