@@ -494,32 +494,34 @@ footer {
     }
 }
 
+/* -----------------------------------------------------
+   PRESENTATION BOX
+----------------------------------------------------- */
 .presentations-list {
     list-style: none;
     padding-left: 0;
 }
 
 .presentations-list li {
-    display: block; /* Changed back to block */
+    display: block;
     margin-bottom: 12px;
 }
 
 .presentation-date {
-    display: inline-flex; /* Keep this as inline-flex */
+    display: inline-flex;
     align-items: center;
     gap: 6px;
-    vertical-align: top; /* Align with top of text */
+    vertical-align: top;
 }
 
-/* Optional: if you want the link and "in Braga" to stay together */
 .presentations-list a {
-    white-space: normal; /* Allow normal wrapping */
+    white-space: normal;
 }
 
 .calendar-icon {
     width: 18px;
     height: 18px;
-    fill: rgb(21, 96, 130); /* same color theme you’re using elsewhere */
+    fill: rgb(21, 96, 130);
     margin-right: 6px;
     flex-shrink: 0;
 }
@@ -532,9 +534,7 @@ footer {
     }
     
     .presentations-list a {
-        display: inline-block;
-        word-break: break-word;
-        overflow-wrap: break-word;
+        word-break: break-all; /* Force long links to break */
     }
     
     /* Reduce padding on mobile for more space */
