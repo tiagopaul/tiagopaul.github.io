@@ -511,6 +511,25 @@ footer {
     flex-shrink: 0;
 }
 
+/* Fix presentation box overflow on mobile */
+@media (max-width: 500px) {
+    .presentations-list {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .presentations-list a {
+        display: inline-block;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Reduce padding on mobile for more space */
+    .course-box {
+        padding: 20px 15px;
+    }
+}
+
 /* -----------------------------------------------------
    CAROUSEL
 ----------------------------------------------------- */
