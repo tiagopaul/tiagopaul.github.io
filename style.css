@@ -487,18 +487,20 @@ footer {
 }
 
 .presentations-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
+    display: block; /* Changed back to block */
     margin-bottom: 12px;
-    padding-left: 28px; /* Add indent for wrapped lines */
-    text-indent: -28px; /* Pull first line back */
 }
 
 .presentation-date {
-    display: inline-flex; /* Changed from flex to inline-flex */
+    display: inline-flex; /* Keep this as inline-flex */
     align-items: center;
     gap: 6px;
+    vertical-align: top; /* Align with top of text */
+}
+
+/* Optional: if you want the link and "in Braga" to stay together */
+.presentations-list a {
+    white-space: normal; /* Allow normal wrapping */
 }
 
 .calendar-icon {
@@ -507,12 +509,6 @@ footer {
     fill: rgb(21, 96, 130); /* same color theme you’re using elsewhere */
     margin-right: 6px;
     flex-shrink: 0;
-}
-
-.presentation-date {
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
 
 /* -----------------------------------------------------
