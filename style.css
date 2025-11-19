@@ -351,7 +351,7 @@ main {
     font-weight: 500;
     color: #333;
     margin-top: -3px; /* Brings it closer to course-name */
-    margin-bottom: 10px; /* Reduced from 15px */
+    margin-bottom: 5px; /* Reduced from 15px */
 }
 
 .course-image img {
@@ -372,7 +372,7 @@ main {
 /* Description */
 .course-description {
     font-size: 1rem;
-    margin-top: 8px; /* Add explicit top margin */
+    margin-top: 4px; /* Add explicit top margin */
     margin-bottom: 15px;
     line-height: 1.6;
 }
