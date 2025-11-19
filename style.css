@@ -491,6 +491,14 @@ footer {
     align-items: flex-start;
     gap: 8px;
     margin-bottom: 12px;
+    padding-left: 28px; /* Add indent for wrapped lines */
+    text-indent: -28px; /* Pull first line back */
+}
+
+.presentation-date {
+    display: inline-flex; /* Changed from flex to inline-flex */
+    align-items: center;
+    gap: 6px;
 }
 
 .calendar-icon {
