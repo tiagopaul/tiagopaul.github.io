@@ -323,7 +323,7 @@ main {
 .course-university {
     font-size: 0.85rem;
     font-weight: bold;
-    margin: 0 0 5px 0;
+    margin: 0 0 2px 0; /* Reduced from 5px */
     color: #555;
     text-transform: uppercase;
 }
@@ -333,6 +333,7 @@ main {
     font-size: 1.45rem;
     font-weight: bold;
     color: rgb(0, 90, 181);
+    line-height: 1.2; /* Add this to reduce line spacing */
 }
 
 .course-name a {
@@ -349,8 +350,8 @@ main {
     font-size: 0.95rem;
     font-weight: 500;
     color: #333;
-    margin-top: -5px; /* brings it closer to course-name */
-    margin-bottom: 15px;
+    margin-top: -3px; /* Brings it closer to course-name */
+    margin-bottom: 10px; /* Reduced from 15px */
 }
 
 .course-image img {
@@ -371,6 +372,7 @@ main {
 /* Description */
 .course-description {
     font-size: 1rem;
+    margin-top: 8px; /* Add explicit top margin */
     margin-bottom: 15px;
     line-height: 1.6;
 }
@@ -433,6 +435,17 @@ main {
     .course-image img {
         width: 100%;
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    .course-name {
+        line-height: 1.15; /* Even tighter line height on mobile */
+    }
+    
+    .course-description {
+        margin-top: 5px; /* Less space before description on mobile */
+        margin-bottom: 12px;
     }
 }
 
