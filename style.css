@@ -615,3 +615,27 @@ footer {
         flex: unset;
     }
 }
+
+/* Carousel and presentations container */
+.carousel-presentations-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.carousel-presentations-container > div {
+    flex: 1;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 850px) {
+    .carousel-presentations-container {
+        flex-direction: column;
+    }
+    
+    .carousel-presentations-container > div,
+    .carousel-presentations-container > section {
+        width: 100%;
+        flex: unset;
+    }
+}
