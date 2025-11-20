@@ -683,3 +683,47 @@ footer {
         flex: unset;
     }
 }
+
+/* make box-sizing consistent so padding/borders don't create overflow */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* container that holds carousel + presentations */
+.carousel-presentations-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;   /* allow children to wrap to next line on narrow screens */
+}
+
+/* force each column to be allowed to shrink */
+.carousel-presentations-container > div,
+.carousel-presentations-container > section {
+  flex: 1 1 0;   /* grow 1, shrink 1, base 0 */
+  min-width: 0;  /* critical: lets the item shrink below its content width */
+}
+
+/* presentations box: full width inside its flex column */
+.carousel-presentations-container > section.course-box {
+  margin: 0;          /* you had margin: 0 earlier but ensure consistent */
+  width: 100%;
+  overflow-wrap: anywhere; /* allow long words / links to wrap */
+}
+
+/* ensure images and wrappers don't force overflow */
+.carousel-image-wrapper,
+.carousel-img,
+.course-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* if you want the presentations box to be slightly narrower on large screens */
+@media (min-width: 1000px) {
+  /* e.g. give carousel 60% and presentations 40% */
+  .carousel-presentations-container > div:first-child { flex: 0 1 60%; }
+  .carousel-presentations-container > section { flex: 0 1 40%; }
+}
+
