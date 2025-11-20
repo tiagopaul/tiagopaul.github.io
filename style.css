@@ -518,6 +518,13 @@ footer {
     white-space: normal;
 }
 
+.presentations-list,
+.presentations-list li,
+.presentations-list a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 .calendar-icon {
     width: 18px;
     height: 18px;
