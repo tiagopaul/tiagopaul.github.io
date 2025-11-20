@@ -649,11 +649,10 @@ footer {
 }
 
 /* Mobile: stack vertically */
-@media (max-width: 1000px) {
-    .carousel-presentations-container {
+@media (max-width: 850px) {
+    .abstract-carousel-container {
         flex-direction: column;
     }
-}
     
     .abstract-carousel-container > div {
         width: 100%;
@@ -673,11 +672,10 @@ footer {
 }
 
 /* Mobile: stack vertically */
-@media (max-width: 1000px) {
+@media (max-width: 850px) {
     .carousel-presentations-container {
         flex-direction: column;
     }
-}
     
     .carousel-presentations-container > div,
     .carousel-presentations-container > section {
@@ -728,4 +726,3 @@ footer {
   .carousel-presentations-container > div:first-child { flex: 0 1 60%; }
   .carousel-presentations-container > section { flex: 0 1 40%; }
 }
-
