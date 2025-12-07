@@ -444,13 +444,14 @@ main {
     .course-box {
         padding: 20px;
     }
-
+    
+    /* Keep flex-wrap behavior, buttons stay inline when possible */
     .course-buttons {
-        flex-direction: column;
+        /* flex-wrap is already set in main rule, no changes needed */
     }
     
     .course-buttons .btn {
-        width: 100%;
+        /* Remove width: 100% to let buttons size naturally */
         padding: 8px 12px;
         font-size: 0.9rem;
         text-align: center;
