@@ -328,6 +328,20 @@ main {
     text-transform: uppercase;
 }
 
+.course-university {
+    font-size: 0.85rem;
+    margin: 0 0 2px 0;
+    color: #555;
+    text-transform: none;   /* ensure we STOP forced uppercase */
+    display: flex;
+    align-items: center;
+    gap: 12px;              /* adjust spacing between date · working paper */
+}
+
+.course-university .dot {
+    font-weight: 400;
+}
+
 .course-name {
     margin: 0 0 5px 0;
     font-size: 1.45rem;
