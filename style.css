@@ -324,7 +324,7 @@ main {
 /* Meta information line (date · working paper) */
 .course-university {
     font-size: 0.95rem;
-    margin: 0 0 4px 0;
+    margin: 0 0 2px 0;  /* Reduced from 4px to 2px */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -332,13 +332,13 @@ main {
 
 .course-university .course-date {
     font-weight: 900;
-    color: #777;
+    color: #666;
 }
 
 .course-university .dot {
     margin: 0 0.2rem;
     color: #777;
-    font-size: 2.0rem;
+    font-size: 1.3rem;
 }
 
 /* Let HTML control the styling of course-role */
@@ -349,7 +349,7 @@ main {
 
 /* Main title */
 .course-name {
-    margin: 0 0 10px 0;
+    margin: 0 0 10px 0;  /* Reduced top margin since line above is closer */
     font-size: 1.45rem;
     font-weight: bold;
     color: rgb(0, 90, 181);
