@@ -332,13 +332,13 @@ main {
 
 .course-university .course-date {
     font-weight: 900;
-    color: #666;
+    color: #777;
 }
 
 .course-university .dot {
     margin: 0 0.2rem;
     color: #777;
-    font-size: 1.3rem;
+    font-size: 2.0rem;
 }
 
 /* Let HTML control the styling of course-role */
