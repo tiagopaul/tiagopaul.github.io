@@ -321,25 +321,31 @@ main {
 }
 
 .course-university {
-    font-size: 0.85rem;
-    font-weight: bold;
-    margin: 0 0 2px 0; /* Reduced from 5px */
-    color: #555;
-    text-transform: uppercase;
-}
-
-.course-university {
-    font-size: 0.85rem;
-    margin: 0 0 2px 0;
-    color: #555;
-    text-transform: none;   /* ensure we STOP forced uppercase */
+    font-size: 0.95rem;
+    font-weight: normal;       /* stop <h3>-like bold inheritance */
+    text-transform: none;      /* stop uppercase */
+    margin: 0 0 4px 0;
     display: flex;
     align-items: center;
-    gap: 12px;              /* adjust spacing between date · working paper */
+    gap: 10px;                 /* spacing between date · working paper */
 }
 
+/* DATE */
+.course-university .course-date {
+    font-weight: 900;          /* very bold */
+    color: #555;               /* gray */
+}
+
+/* MIDDOT */
 .course-university .dot {
-    font-weight: 400;
+    margin: 0 0.2rem;
+    color: #777;
+}
+
+/* WORKING PAPER */
+.course-university .course-role {
+    font-weight: normal;
+    text-transform: none;
 }
 
 .course-name {
