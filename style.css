@@ -420,7 +420,6 @@ main {
         flex-direction: column;
     }
     .course-buttons .btn {
-        width: 100%;
         text-align: center;
     }
 }
