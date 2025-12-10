@@ -327,7 +327,8 @@ main {
     margin: 0 0 2px 0;  /* Reduced from 4px to 2px */
     display: flex;
     align-items: center;
-    gap: 10px;
+    column-gap: 10px;  /* Horizontal gap between items */
+    row-gap: 2px;       /* Small vertical gap when wrapped */
     flex-wrap: wrap;  /* Allow the entire line to wrap if needed */
 }
 
