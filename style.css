@@ -328,11 +328,13 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;  /* Allow the entire line to wrap if needed */
 }
 
 .course-university .course-date {
     font-weight: 900;
     color: #666;
+    white-space: nowrap;  /* Prevent "November 2023" from breaking */
 }
 
 .course-university .dot {
@@ -345,6 +347,7 @@ main {
 .course-university .course-role {
     /* No font-weight or font-style specified here */
     /* Style with <i>, <b>, <strong>, <em> in HTML */
+    white-space: nowrap;  /* Prevent "Working paper" from breaking */
 }
 
 /* Main title */
