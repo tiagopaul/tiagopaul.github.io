@@ -353,7 +353,7 @@ main {
 
 /* Main title */
 .course-name {
-    margin: 0 0 10px 0;  /* Reduced top margin since line above is closer */
+    margin: 0 0 6px 0;  /* Reduced top margin since line above is closer */
     font-size: 1.45rem;
     font-weight: bold;
     color: rgb(0, 90, 181);
