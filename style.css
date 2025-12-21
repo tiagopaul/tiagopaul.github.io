@@ -353,7 +353,7 @@ main {
 
 /* Main title */
 .course-name {
-    margin: 0 0 6px 0;  /* Reduced top margin since line above is closer */
+    margin: -2px 0 6px 0;  /* Reduced top margin to negative value */
     font-size: 1.45rem;
     font-weight: bold;
     color: rgb(0, 90, 181);
@@ -368,15 +368,6 @@ main {
 
 .course-name a:hover {
     color: rgb(255, 82, 82);
-}
-
-/* Secondary role/date line */
-.course-role-date {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #333;
-    margin-top: -3px;
-    margin-bottom: 2px;
 }
 
 /* Description text */
