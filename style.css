@@ -286,6 +286,9 @@ main {
 
 /* Mobile */
 @media (max-width: 850px) {
+   .contact-icons {
+         justify-content: center;
+    }
     .intro-wrapper {
         flex-direction: column;
         text-align: center;
