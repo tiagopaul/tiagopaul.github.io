@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <style>
         .filter-section {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
         .filter-label {
@@ -41,8 +41,32 @@
 
         .filter-tag.active {
             background: rgb(21, 96, 130);
-            color: white;
+            color: rgb(255, 82, 82);
             border-color: rgb(21, 96, 130);
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: rgb(21, 96, 130);
+        }
+
+        .subfield-section {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .subfield-section.visible {
+            display: block;
         }
     </style>
 </head>
@@ -69,20 +93,27 @@
 </header>
 <main>
     <div class="container">
-        <h1>Pre-Doctoral Papers</h1>
-        
+        <input type="text" class="search-bar" placeholder="Search papers..." oninput="applyFilters()">
+
         <div class="filter-section">
             <div class="filter-label">Filter by field:</div>
-            <div class="filter-tags">
-                <span class="filter-tag active" onclick="filterPapers('all')">All</span>
-                <span class="filter-tag" onclick="filterPapers('Macroeconomics')">Macroeconomics</span>
-                <span class="filter-tag" onclick="filterPapers('Labour Economics')">Labour Economics</span>
-                <span class="filter-tag" onclick="filterPapers('Public Economics')">Public Economics</span>
-                <span class="filter-tag" onclick="filterPapers('Industrial Organization')">Industrial Organization</span>
+            <div class="filter-tags" id="field-filters">
+                <span class="filter-tag active" data-field="all" onclick="toggleField(this)">All</span>
+                <span class="filter-tag" data-field="Macroeconomics" onclick="toggleField(this)">Macroeconomics</span>
+                <span class="filter-tag" data-field="Labour Economics" onclick="toggleField(this)">Labour Economics</span>
+                <span class="filter-tag" data-field="Public Economics" onclick="toggleField(this)">Public Economics</span>
+                <span class="filter-tag" data-field="Industrial Organization" onclick="toggleField(this)">Industrial Organization</span>
             </div>
         </div>
 
-        <section class="course-box" data-tags="Macroeconomics,Labour Economics">
+        <div class="filter-section subfield-section" id="subfield-section">
+            <div class="filter-label">Filter by subfield:</div>
+            <div class="filter-tags" id="subfield-filters"></div>
+        </div>
+
+        <h1>Pre-Doctoral Papers</h1>
+
+        <section class="course-box" data-tags="Macroeconomics,Labour Economics" data-subfields="Minimum Wages,Fiscal Policy" data-title="Heterogeneous Labour Market Concentration and Minimum Wage Policy">
             <div class="course-university">
                 <span class="course-date">NOVEMBER 2023</span>
                 <span class="dot">&middot;</span>
@@ -93,7 +124,6 @@
                     Heterogeneous Labour Market Concentration and Minimum Wage Policy
                 </a>
             </h2>
-
             <div class="course-buttons">
                 <a href="research_projects/hetlabmarcon/HetLabMarCon.pdf" target="_blank" class="btn">Current Draft</a>
                 <a href="research_projects/hetlabmarcon/slides_hetlabmarcon.pdf" target="_blank" class="btn">Slides</a>
@@ -112,23 +142,131 @@
 </footer>
 <script src="navigation_menu.js"></script>
 <script>
-    function filterPapers(tag) {
+    const subfieldsByField = {
+        'Macroeconomics': ['Fiscal Policy', 'Monetary Policy', 'Business Cycles'],
+        'Labour Economics': ['Minimum Wages', 'Migration', 'Unemployment'],
+        'Public Economics': ['Taxation', 'Public Goods', 'Redistribution'],
+        'Industrial Organization': ['Market Structure', 'Competition Policy', 'Regulation']
+    };
+
+    let activeFields = new Set(['all']);
+    let activeSubfields = new Set();
+
+    function toggleField(el) {
+        const field = el.dataset.field;
+
+        if (field === 'all') {
+            activeFields.clear();
+            activeFields.add('all');
+            document.querySelectorAll('#field-filters .filter-tag').forEach(tag => {
+                tag.classList.remove('active');
+            });
+            el.classList.add('active');
+        } else {
+            activeFields.delete('all');
+            document.querySelector('#field-filters .filter-tag[data-field="all"]').classList.remove('active');
+
+            if (activeFields.has(field)) {
+                activeFields.delete(field);
+                el.classList.remove('active');
+                if (activeFields.size === 0) {
+                    activeFields.add('all');
+                    document.querySelector('#field-filters .filter-tag[data-field="all"]').classList.add('active');
+                }
+            } else {
+                activeFields.add(field);
+                el.classList.add('active');
+            }
+        }
+
+        updateSubfieldOptions();
+        applyFilters();
+    }
+
+    function updateSubfieldOptions() {
+        const subfieldSection = document.getElementById('subfield-section');
+        const subfieldFilters = document.getElementById('subfield-filters');
+
+        if (activeFields.has('all') || activeFields.size === 0) {
+            subfieldSection.classList.remove('visible');
+            activeSubfields.clear();
+            return;
+        }
+
+        const availableSubfields = new Set();
+        activeFields.forEach(field => {
+            if (subfieldsByField[field]) {
+                subfieldsByField[field].forEach(sf => availableSubfields.add(sf));
+            }
+        });
+
+        activeSubfields.forEach(sf => {
+            if (!availableSubfields.has(sf)) {
+                activeSubfields.delete(sf);
+            }
+        });
+
+        subfieldFilters.innerHTML = '<span class="filter-tag active" data-subfield="all" onclick="toggleSubfield(this)">All</span>';
+        availableSubfields.forEach(sf => {
+            const isActive = activeSubfields.has(sf);
+            subfieldFilters.innerHTML += `<span class="filter-tag${isActive ? ' active' : ''}" data-subfield="${sf}" onclick="toggleSubfield(this)">${sf}</span>`;
+        });
+
+        if (activeSubfields.size > 0) {
+            subfieldFilters.querySelector('.filter-tag[data-subfield="all"]').classList.remove('active');
+        }
+
+        subfieldSection.classList.add('visible');
+    }
+
+    function toggleSubfield(el) {
+        const subfield = el.dataset.subfield;
+
+        if (subfield === 'all') {
+            activeSubfields.clear();
+            document.querySelectorAll('#subfield-filters .filter-tag').forEach(tag => {
+                tag.classList.remove('active');
+            });
+            el.classList.add('active');
+        } else {
+            document.querySelector('#subfield-filters .filter-tag[data-subfield="all"]').classList.remove('active');
+
+            if (activeSubfields.has(subfield)) {
+                activeSubfields.delete(subfield);
+                el.classList.remove('active');
+                if (activeSubfields.size === 0) {
+                    document.querySelector('#subfield-filters .filter-tag[data-subfield="all"]').classList.add('active');
+                }
+            } else {
+                activeSubfields.add(subfield);
+                el.classList.add('active');
+            }
+        }
+
+        applyFilters();
+    }
+
+    function applyFilters() {
+        const searchTerm = document.querySelector('.search-bar').value.toLowerCase();
         const papers = document.querySelectorAll('.course-box');
-        const filterTags = document.querySelectorAll('.filter-tag');
-        
-        filterTags.forEach(t => t.classList.remove('active'));
-        event.target.classList.add('active');
-        
+
         papers.forEach(paper => {
-            if (tag === 'all') {
+            const title = (paper.dataset.title || '').toLowerCase();
+            const paperFields = (paper.dataset.tags || '').split(',');
+            const paperSubfields = (paper.dataset.subfields || '').split(',');
+
+            const matchesSearch = searchTerm === '' || title.includes(searchTerm);
+
+            const matchesField = activeFields.has('all') || 
+                paperFields.some(f => activeFields.has(f.trim()));
+
+            const matchesSubfield = activeSubfields.size === 0 || 
+                paperSubfields.some(sf => activeSubfields.has(sf.trim()));
+
+            if (matchesSearch && matchesField && matchesSubfield) {
                 paper.style.display = 'block';
             } else {
-                const paperTags = paper.getAttribute('data-tags');
-                if (paperTags && paperTags.split(',').includes(tag)) {
-                    paper.style.display = 'block';
-                } else {
-                    paper.style.display = 'none';
-                }
+                paper.style.display = 'none';
             }
         });
     }
