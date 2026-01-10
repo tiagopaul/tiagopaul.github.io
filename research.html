@@ -99,10 +99,7 @@
             <div class="filter-label">Filter by field:</div>
             <div class="filter-tags" id="field-filters">
                 <span class="filter-tag active" data-field="all" onclick="toggleField(this)">All</span>
-                <span class="filter-tag" data-field="Macroeconomics" onclick="toggleField(this)">Macroeconomics</span>
                 <span class="filter-tag" data-field="Labour Economics" onclick="toggleField(this)">Labour Economics</span>
-                <span class="filter-tag" data-field="Public Economics" onclick="toggleField(this)">Public Economics</span>
-                <span class="filter-tag" data-field="Industrial Organization" onclick="toggleField(this)">Industrial Organization</span>
             </div>
         </div>
 
@@ -113,7 +110,7 @@
 
         <h1>Pre-Doctoral Papers</h1>
 
-        <section class="course-box" data-tags="Macroeconomics,Labour Economics" data-subfields="Minimum Wages,Fiscal Policy" data-title="Heterogeneous Labour Market Concentration and Minimum Wage Policy">
+        <section class="course-box" data-tags="Labour Economics" data-subfields="Minimum Wages,Monopsony" data-title="Heterogeneous Labour Market Concentration and Minimum Wage Policy">
             <div class="course-university">
                 <span class="course-date">NOVEMBER 2023</span>
                 <span class="dot">&middot;</span>
@@ -143,10 +140,7 @@
 <script src="navigation_menu.js"></script>
 <script>
     const subfieldsByField = {
-        'Macroeconomics': ['Fiscal Policy', 'Monetary Policy', 'Business Cycles'],
-        'Labour Economics': ['Minimum Wages', 'Migration', 'Unemployment'],
-        'Public Economics': ['Taxation', 'Public Goods', 'Redistribution'],
-        'Industrial Organization': ['Market Structure', 'Competition Policy', 'Regulation']
+        'Labour Economics': ['Minimum Wages', 'Monopsony']
     };
 
     let activeFields = new Set(['all']);
