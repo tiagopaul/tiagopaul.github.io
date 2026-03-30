@@ -418,6 +418,21 @@ main {
     transform: translateY(-2px);
 }
 
+.course-grid {
+    display: flex;
+    gap: 2rem;
+}
+
+.course-grid .course-box {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .course-grid {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 700px) {
     .course-content {
         flex-direction: column;
