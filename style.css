@@ -749,3 +749,143 @@ footer {
   .carousel-presentations-container > div:first-child { flex: 0 1 60%; }
   .carousel-presentations-container > section { flex: 0 1 40%; }
 }
+
+/* -----------------------------------------------------
+   EXPANDABLE PANELS (Abstract, Presentations, BibTeX)
+----------------------------------------------------- */
+.btn-divider {
+    width: 1px;
+    height: 24px;
+    background: #d0d0d0;
+    align-self: center;
+    margin: 0 4px;
+}
+
+.course-buttons .btn-toggle {
+    background-color: transparent;
+    color: rgb(21, 96, 130);
+    border: 1.5px solid rgba(21, 96, 130, 0.5);
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.course-buttons .btn-toggle:hover {
+    background-color: rgba(21, 96, 130, 0.08);
+    color: rgb(21, 96, 130);
+    transform: translateY(-2px);
+}
+
+.course-buttons .btn-toggle.active {
+    background-color: rgb(21, 96, 130);
+    color: white;
+    border-color: rgb(21, 96, 130);
+}
+
+.course-buttons .btn-toggle.active:hover {
+    color: rgb(255, 82, 82);
+}
+
+.course-buttons .btn-toggle .chevron {
+    font-size: 0.7em;
+    transition: transform 0.2s;
+}
+
+.course-buttons .btn-toggle.active .chevron {
+    transform: rotate(180deg);
+}
+
+.course-panel {
+    margin-top: 16px;
+    padding: 16px 18px;
+    background: #f8f9fa;
+    border-left: 3px solid rgb(21, 96, 130);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.course-panel[hidden] {
+    display: none;
+}
+
+.course-panel p {
+    margin: 0;
+    text-align: justify;
+}
+
+.course-panel .presentations-inline {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.course-panel .presentations-inline li {
+    margin-bottom: 6px;
+}
+
+.course-panel .presentations-inline li:last-child {
+    margin-bottom: 0;
+}
+
+.course-panel .pres-date {
+    font-weight: 600;
+    color: rgb(21, 96, 130);
+    display: inline-block;
+    min-width: 110px;
+}
+
+.course-panel-bibtex {
+    position: relative;
+    padding-right: 80px;
+}
+
+.course-panel pre {
+    margin: 0;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #2c3e50;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.btn-copy {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(21, 96, 130, 0.25);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: rgb(21, 96, 130);
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-copy:hover {
+    background: white;
+    color: rgb(255, 82, 82);
+}
+
+.btn-copy.copied {
+    background: rgb(21, 96, 130);
+    color: white;
+    border-color: rgb(21, 96, 130);
+}
+
+@media (max-width: 500px) {
+    .btn-divider { display: none; }
+    .course-panel-bibtex { padding-right: 18px; }
+    .btn-copy {
+        position: static;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+}
