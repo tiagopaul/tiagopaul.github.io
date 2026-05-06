@@ -418,6 +418,23 @@ main {
     transform: translateY(-2px);
 }
 
+.course-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-icon {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
 .course-grid {
     display: flex;
     gap: 2rem;
