@@ -316,5 +316,40 @@
         });
     }
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.btn-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const panel = document.getElementById(button.dataset.target);
+            if (!panel) return;
+            const isOpen = !panel.hidden;
+            panel.hidden = isOpen;
+            button.classList.toggle('active', !isOpen);
+            button.setAttribute('aria-expanded', String(!isOpen));
+        });
+    });
+
+    document.querySelectorAll('.btn-copy').forEach(button => {
+        button.addEventListener('click', async () => {
+            const target = document.getElementById(button.dataset.target);
+            if (!target) return;
+            try {
+                await navigator.clipboard.writeText(target.textContent.trim());
+                const original = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = original;
+                    button.classList.remove('copied');
+                }, 1500);
+            } catch (err) {
+                console.error('Copy failed:', err);
+            }
+        });
+    });
+});
+</script>
+    
 </body>
 </html>
