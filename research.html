@@ -8,81 +8,47 @@
     <link rel="icon" type="image/png" href="personal_files/tp_icon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <style>
-        .filter-section {
-            margin-bottom: 15px;
-        }
-
-        .filter-label {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .filter-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .filter-tag {
-            padding: 8px 16px;
-            background: #f0f0f0;
-            border-radius: 20px;
-            font-size: 0.9em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .filter-tag:hover {
-            background: #e0e0e0;
-        }
-
-        .filter-tag.active {
-            background: rgb(21, 96, 130);
-            color: rgb(255, 82, 82);
-            border-color: rgb(21, 96, 130);
-            font-weight: 600;
-        }
-
-        .search-bar {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1em;
-            margin-bottom: 20px;
-            transition: border-color 0.3s ease;
-        }
-
-        .search-bar:focus {
-            outline: none;
-            border-color: rgb(21, 96, 130);
-        }
-
-        .subfield-section {
-            display: none;
-            margin-top: 15px;
-        }
-
-        .subfield-section.visible {
-            display: block;
-        }
+        .filter-section { margin-bottom: 15px; }
+        .filter-label { font-size: 0.9em; color: #666; margin-bottom: 10px; font-weight: 600; }
+        .filter-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .filter-tag { padding: 8px 16px; background: #f0f0f0; border-radius: 20px; font-size: 0.9em; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; }
+        .filter-tag:hover { background: #e0e0e0; }
+        .filter-tag.active { background: rgb(21, 96, 130); color: rgb(255, 82, 82); border-color: rgb(21, 96, 130); font-weight: 600; }
+        .search-bar { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; margin-bottom: 20px; transition: border-color 0.3s ease; }
+        .search-bar:focus { outline: none; border-color: rgb(21, 96, 130); }
+        .subfield-section { display: none; margin-top: 15px; }
+        .subfield-section.visible { display: block; }
     </style>
 </head>
 <body>
+
+<!-- Reusable icon definitions (referenced via <use href="#..."/>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+        <g id="icon-doc">
+            <path d="M3 1.5h6.5L13 5v9.5H3z"/>
+            <path d="M9.5 1.5V5H13"/>
+            <line x1="5.5" y1="8.5" x2="10.5" y2="8.5"/>
+            <line x1="5.5" y1="11" x2="10.5" y2="11"/>
+        </g>
+        <g id="icon-slides">
+            <rect x="1.5" y="2" width="13" height="9" rx="0.5"/>
+            <line x1="8" y1="11" x2="8" y2="14"/>
+            <line x1="5" y1="14" x2="11" y2="14"/>
+            <line x1="5" y1="8.5" x2="5" y2="6.5"/>
+            <line x1="8" y1="8.5" x2="8" y2="4.5"/>
+            <line x1="11" y1="8.5" x2="11" y2="5.5"/>
+        </g>
+    </defs>
+</svg>
+
 <header>
     <div class="container header-container">
         <a href="index.html" class="site-name">
             <img src="personal_files/tp_icon.png" alt="" class="site-icon">
             Tiago Paúl
         </a>
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
         <nav class="header-nav" id="nav-menu">
             <a href="index.html">Home</a>
             <a href="research.html" class="active">Research</a>
@@ -92,176 +58,105 @@
         </nav>
     </div>
 </header>
+
 <main>
     <div class="container">
-        <!-- <input type="text" class="search-bar" placeholder="Search papers..." oninput="applyFilters()"> -->
 
-        <!--<div class="filter-section">
+        <!-- <input type="text" class="search-bar" placeholder="Search papers..." oninput="applyFilters()"> -->
+        <!--
+        <div class="filter-section">
             <div class="filter-label">Filter by field:</div>
             <div class="filter-tags" id="field-filters">
                 <span class="filter-tag active" data-field="all" onclick="toggleField(this)">All</span>
                 <span class="filter-tag" data-field="Labour Economics" onclick="toggleField(this)">Labour Economics</span>
             </div>
-        </div>-->
+        </div>
+        -->
 
         <div class="filter-section subfield-section" id="subfield-section">
             <div class="filter-label">Filter by subfield:</div>
             <div class="filter-tags" id="subfield-filters"></div>
         </div>
 
+        <!-- ============== WORKING PAPERS (uncomment when ready) ==============
+        <h1>Working Papers</h1>
 
-        <!--<h1>Working Papers</h1>
-
-        <section class="course-box" data-tags="Macroeconomics,Labour Economics" data-subfields="Fiscal Policy,Migration" data-title="Fiscal-Mobility Propagation in Currency Unions">
+        <section class="course-box" data-tags="Macroeconomics,Labour Economics" data-subfields="Fiscal Policy,Migration" data-title="Fiscal-Mobility Stabilisers in Currency Unions">
             <div class="course-university">
-                <span class="course-date">JUNE 2026</span>
-                <span class="dot">&middot;</span>
-                <span class="course-role"><i>Working paper</i></span>
+                <span class="course-date">JUNE 2026</span><span class="dot">&middot;</span><span class="course-role"><i>Working paper</i></span>
             </div>
-            <h2 class="course-name">
-                <a href="research_projects/hetlabmarcon/hetlabmarcon.html">
-                    Fiscal-Mobility Stabilisers in Currency Unions
-                </a>
-            </h2>
+            <h2 class="course-name"><a href="research_projects/fiscalmobility/FiscalMobility.pdf" target="_blank">Fiscal-Mobility Stabilisers in Currency Unions</a></h2>
             <div class="course-buttons">
-                <a href="research_projects/hetlabmarcon/HetLabMarCon.pdf" target="_blank" class="btn">
-                    <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M3 1.5h6.5L13 5v9.5H3z"/>
-                        <path d="M9.5 1.5V5H13"/>
-                        <line x1="5.5" y1="8.5" x2="10.5" y2="8.5"/>
-                        <line x1="5.5" y1="11" x2="10.5" y2="11"/>
-                    </svg>
-                    Current Draft
-                </a>
-                <a href="research_projects/hetlabmarcon/slides_hetlabmarcon.pdf" target="_blank" class="btn">
-                    <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true">
-                        <rect x="1.5" y="2" width="13" height="9" rx="0.5"/>
-                        <line x1="8" y1="11" x2="8" y2="14"/>
-                        <line x1="5" y1="14" x2="11" y2="14"/>
-                        <line x1="5" y1="8.5" x2="5" y2="6.5"/>
-                        <line x1="8" y1="8.5" x2="8" y2="4.5"/>
-                        <line x1="11" y1="8.5" x2="11" y2="5.5"/>
-                    </svg>
-                    Slides
-                </a>
-                <a href="research_projects/hetlabmarcon/msc_hetlabmarcon.pdf" target="_blank" class="btn">
-                    <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M3 1.5h6.5L13 5v9.5H3z"/>
-                        <path d="M9.5 1.5V5H13"/>
-                        <line x1="5.5" y1="8.5" x2="10.5" y2="8.5"/>
-                        <line x1="5.5" y1="11" x2="10.5" y2="11"/>
-                    </svg>
-                    Master's Thesis
-                </a>
+                <a href="research_projects/fiscalmobility/FiscalMobility.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Current Draft</a>
+                <a href="research_projects/fiscalmobility/slides_fiscalmobility.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-slides"/></svg>Slides</a>
             </div>
-        </section>-->
-        
+        </section>
+        ============== END WORKING PAPERS ============== -->
 
         <h1>Pre-Doctoral Papers</h1>
 
         <section class="course-box" data-tags="Labour Economics" data-subfields="Minimum Wages,Monopsony" data-title="Heterogeneous Labour Market Concentration and Minimum Wage Policy">
             <div class="course-university">
-                <span class="course-date">NOVEMBER 2023</span>
-                <span class="dot">&middot;</span>
-                <span class="course-role"><i>Resting paper</i></span>
+                <span class="course-date">NOVEMBER 2023</span><span class="dot">&middot;</span><span class="course-role"><i>Resting paper</i></span>
             </div>
-            <h2 class="course-name">
-                <a href="research_projects/hetlabmarcon/HetLabMarCon.pdf" target="_blank">
-                    Heterogeneous Labour Market Concentration and Minimum Wage Policy
-                </a>
-            </h2>
+            <h2 class="course-name"><a href="research_projects/hetlabmarcon/HetLabMarCon.pdf" target="_blank">Heterogeneous Labour Market Concentration and Minimum Wage Policy</a></h2>
             <div class="course-buttons">
-                <a href="research_projects/hetlabmarcon/HetLabMarCon.pdf" target="_blank" class="btn">
-                    <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M3 1.5h6.5L13 5v9.5H3z"/>
-                        <path d="M9.5 1.5V5H13"/>
-                        <line x1="5.5" y1="8.5" x2="10.5" y2="8.5"/>
-                        <line x1="5.5" y1="11" x2="10.5" y2="11"/>
-                    </svg>
-                    Current Draft
-                </a>
-                <a href="research_projects/hetlabmarcon/slides_hetlabmarcon.pdf" target="_blank" class="btn">
-                    <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true">
-                        <rect x="1.5" y="2" width="13" height="9" rx="0.5"/>
-                        <line x1="8" y1="11" x2="8" y2="14"/>
-                        <line x1="5" y1="14" x2="11" y2="14"/>
-                        <line x1="5" y1="8.5" x2="5" y2="6.5"/>
-                        <line x1="8" y1="8.5" x2="8" y2="4.5"/>
-                        <line x1="11" y1="8.5" x2="11" y2="5.5"/>
-                    </svg>
-                    Slides
-                </a>
-                <a href="research_projects/hetlabmarcon/msc_hetlabmarcon.pdf" target="_blank" class="btn">
-                    <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M3 1.5h6.5L13 5v9.5H3z"/>
-                        <path d="M9.5 1.5V5H13"/>
-                        <line x1="5.5" y1="8.5" x2="10.5" y2="8.5"/>
-                        <line x1="5.5" y1="11" x2="10.5" y2="11"/>
-                    </svg>
-                    Master's Thesis
-                </a>
+                <a href="research_projects/hetlabmarcon/HetLabMarCon.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Current Draft</a>
+                <a href="research_projects/hetlabmarcon/slides_hetlabmarcon.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-slides"/></svg>Slides</a>
+                <a href="research_projects/hetlabmarcon/msc_hetlabmarcon.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Master's Thesis</a>
                 <span class="btn-divider" aria-hidden="true"></span>
-                <button type="button" class="btn btn-toggle" data-target="abstract-hetlabmarcon" aria-expanded="false">
-                    Abstract <span class="chevron" aria-hidden="true">▾</span>
-                </button>
-                <button type="button" class="btn btn-toggle" data-target="presentations-hetlabmarcon" aria-expanded="false">
-                    Presentations <span class="chevron" aria-hidden="true">▾</span>
-                </button>
-                <!--<button type="button" class="btn btn-toggle" data-target="bibtex-hetlabmarcon" aria-expanded="false">
-                    BibTeX <span class="chevron" aria-hidden="true">▾</span>
-                </button>-->
+                <button type="button" class="btn btn-toggle" data-target="abstract-hetlabmarcon" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
+                <button type="button" class="btn btn-toggle" data-target="presentations-hetlabmarcon" aria-expanded="false">Presentations <span class="chevron" aria-hidden="true">▾</span></button>
+                <!-- <button type="button" class="btn btn-toggle" data-target="bibtex-hetlabmarcon" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button> -->
             </div>
             <div class="course-panel" id="abstract-hetlabmarcon" hidden>
-                <p>This paper empirically tests whether minimum wages may have positive employment effects when diverging from a perfect competition framework. I use administrative data from 1986 to 2013 to segment Portugal into several local labour markets and construct Herfindahl–Hirschman Indices to measure concentration levels in each market. I find that increased minimum wage exposure has differential employment effects depending on labour market concentration - estimates indicate employment responds negatively in highly competitive markets and positively in highly concentrated ones. These results are robust to the usage of instrumental variables and to different definitions of local labour markets, although the persistence of these effects varies across specifications. Labour markets are highly heterogeneous in their concentration level, which can help reconcile the conflicting results in the minimum wage literature and provide new policy insights.</p>
+                <p>This paper empirically tests whether minimum wages may have positive employment effects when diverging from a perfect competition framework. I use administrative data from 1986 to 2013 to segment Portugal into several local labour markets and construct Herfindahl–Hirschman Indices to measure concentration levels in each market. I find that increased minimum wage exposure has differential employment effects depending on labour market concentration — estimates indicate employment responds negatively in highly competitive markets and positively in highly concentrated ones. These results are robust to the usage of instrumental variables and to different definitions of local labour markets, although the persistence of these effects varies across specifications. Labour markets are highly heterogeneous in their concentration level, which can help reconcile the conflicting results in the minimum wage literature and provide new policy insights.</p>
             </div>
             <div class="course-panel" id="presentations-hetlabmarcon" hidden>
                 <ul class="presentations-inline">
                     <li><span class="pres-date">July 2023</span><a href="https://nipe.eeg.uminho.pt/en/nipe-organises-the-16th-edition-of-the-annual-meeting-of-the-portuguese-economic-journal/" target="_blank">16th Annual Meeting of the Portuguese Economic Journal</a>, Braga</li>
                 </ul>
             </div>
+            <!--
             <div class="course-panel course-panel-bibtex" id="bibtex-hetlabmarcon" hidden>
                 <button type="button" class="btn-copy" data-target="bibtex-content-hetlabmarcon">Copy</button>
-        <!--<pre id="bibtex-content-hetlabmarcon">@unpublished{paul2023hetlabmar,
-          author = {Pa{\'u}l, Tiago},
-          title  = {Heterogeneous Labour Market Concentration and Minimum Wage Policy},
-          year   = {2023},
-          note   = {Working paper}
-        }</pre>-->
+<pre id="bibtex-content-hetlabmarcon">@unpublished{paul2023hetlabmar,
+  author = {Pa{\'u}l, Tiago},
+  title  = {Heterogeneous Labour Market Concentration and Minimum Wage Policy},
+  year   = {2023},
+  note   = {Working paper}
+}</pre>
             </div>
+            -->
         </section>
+
     </div>
 </main>
+
 <footer>
     <div class="container footer-container">
-        <a href="https://www.lse.ac.uk/economics" target="_blank">
-            <img src="personal_files/lse_logo.png" alt="" class="footer-image">
-        </a>
+        <a href="https://www.lse.ac.uk/economics" target="_blank"><img src="personal_files/lse_logo.png" alt="" class="footer-image"></a>
         <p>&copy; 2025 Tiago Paúl</p>
     </div>
 </footer>
-<script src="navigation_menu.js"></script>
-<script>
-    const subfieldsByField = {
-        'Labour Economics': ['Minimum Wages', 'Monopsony']
-    };
 
+<script src="navigation_menu.js"></script>
+
+<script>
+    // Filter logic (used when the filter UI above is uncommented)
+    const subfieldsByField = { 'Labour Economics': ['Minimum Wages', 'Monopsony'] };
     let activeFields = new Set(['all']);
     let activeSubfields = new Set();
 
     function toggleField(el) {
         const field = el.dataset.field;
-
         if (field === 'all') {
-            activeFields.clear();
-            activeFields.add('all');
-            document.querySelectorAll('#field-filters .filter-tag').forEach(tag => {
-                tag.classList.remove('active');
-            });
+            activeFields.clear(); activeFields.add('all');
+            document.querySelectorAll('#field-filters .filter-tag').forEach(t => t.classList.remove('active'));
             el.classList.add('active');
         } else {
             activeFields.delete('all');
             document.querySelector('#field-filters .filter-tag[data-field="all"]').classList.remove('active');
-
             if (activeFields.has(field)) {
                 activeFields.delete(field);
                 el.classList.remove('active');
@@ -274,7 +169,6 @@
                 el.classList.add('active');
             }
         }
-
         updateSubfieldOptions();
         applyFilters();
     }
@@ -282,125 +176,89 @@
     function updateSubfieldOptions() {
         const subfieldSection = document.getElementById('subfield-section');
         const subfieldFilters = document.getElementById('subfield-filters');
-
         if (activeFields.has('all') || activeFields.size === 0) {
             subfieldSection.classList.remove('visible');
             activeSubfields.clear();
             return;
         }
-
         const availableSubfields = new Set();
-        activeFields.forEach(field => {
-            if (subfieldsByField[field]) {
-                subfieldsByField[field].forEach(sf => availableSubfields.add(sf));
-            }
-        });
-
-        activeSubfields.forEach(sf => {
-            if (!availableSubfields.has(sf)) {
-                activeSubfields.delete(sf);
-            }
-        });
-
+        activeFields.forEach(f => { if (subfieldsByField[f]) subfieldsByField[f].forEach(sf => availableSubfields.add(sf)); });
+        activeSubfields.forEach(sf => { if (!availableSubfields.has(sf)) activeSubfields.delete(sf); });
         subfieldFilters.innerHTML = '<span class="filter-tag active" data-subfield="all" onclick="toggleSubfield(this)">All</span>';
         availableSubfields.forEach(sf => {
             const isActive = activeSubfields.has(sf);
             subfieldFilters.innerHTML += `<span class="filter-tag${isActive ? ' active' : ''}" data-subfield="${sf}" onclick="toggleSubfield(this)">${sf}</span>`;
         });
-
-        if (activeSubfields.size > 0) {
-            subfieldFilters.querySelector('.filter-tag[data-subfield="all"]').classList.remove('active');
-        }
-
+        if (activeSubfields.size > 0) subfieldFilters.querySelector('.filter-tag[data-subfield="all"]').classList.remove('active');
         subfieldSection.classList.add('visible');
     }
 
     function toggleSubfield(el) {
         const subfield = el.dataset.subfield;
-
         if (subfield === 'all') {
             activeSubfields.clear();
-            document.querySelectorAll('#subfield-filters .filter-tag').forEach(tag => {
-                tag.classList.remove('active');
-            });
+            document.querySelectorAll('#subfield-filters .filter-tag').forEach(t => t.classList.remove('active'));
             el.classList.add('active');
         } else {
             document.querySelector('#subfield-filters .filter-tag[data-subfield="all"]').classList.remove('active');
-
             if (activeSubfields.has(subfield)) {
                 activeSubfields.delete(subfield);
                 el.classList.remove('active');
-                if (activeSubfields.size === 0) {
-                    document.querySelector('#subfield-filters .filter-tag[data-subfield="all"]').classList.add('active');
-                }
+                if (activeSubfields.size === 0) document.querySelector('#subfield-filters .filter-tag[data-subfield="all"]').classList.add('active');
             } else {
                 activeSubfields.add(subfield);
                 el.classList.add('active');
             }
         }
-
         applyFilters();
     }
 
     function applyFilters() {
-        const searchTerm = document.querySelector('.search-bar').value.toLowerCase();
-        const papers = document.querySelectorAll('.course-box');
-
-        papers.forEach(paper => {
+        const searchBar = document.querySelector('.search-bar');
+        const searchTerm = searchBar ? searchBar.value.toLowerCase() : '';
+        document.querySelectorAll('.course-box').forEach(paper => {
             const title = (paper.dataset.title || '').toLowerCase();
             const paperFields = (paper.dataset.tags || '').split(',');
             const paperSubfields = (paper.dataset.subfields || '').split(',');
-
             const matchesSearch = searchTerm === '' || title.includes(searchTerm);
-
-            const matchesField = activeFields.has('all') || 
-                paperFields.some(f => activeFields.has(f.trim()));
-
-            const matchesSubfield = activeSubfields.size === 0 || 
-                paperSubfields.some(sf => activeSubfields.has(sf.trim()));
-
-            if (matchesSearch && matchesField && matchesSubfield) {
-                paper.style.display = 'block';
-            } else {
-                paper.style.display = 'none';
-            }
+            const matchesField = activeFields.has('all') || paperFields.some(f => activeFields.has(f.trim()));
+            const matchesSubfield = activeSubfields.size === 0 || paperSubfields.some(sf => activeSubfields.has(sf.trim()));
+            paper.style.display = (matchesSearch && matchesField && matchesSubfield) ? 'block' : 'none';
         });
     }
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.btn-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-            const panel = document.getElementById(button.dataset.target);
-            if (!panel) return;
-            const isOpen = !panel.hidden;
-            panel.hidden = isOpen;
-            button.classList.toggle('active', !isOpen);
-            button.setAttribute('aria-expanded', String(!isOpen));
+    // Toggle panels and copy-to-clipboard
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.btn-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = document.getElementById(button.dataset.target);
+                if (!panel) return;
+                const isOpen = !panel.hidden;
+                panel.hidden = isOpen;
+                button.classList.toggle('active', !isOpen);
+                button.setAttribute('aria-expanded', String(!isOpen));
+            });
         });
-    });
 
-    document.querySelectorAll('.btn-copy').forEach(button => {
-        button.addEventListener('click', async () => {
-            const target = document.getElementById(button.dataset.target);
-            if (!target) return;
-            try {
-                await navigator.clipboard.writeText(target.textContent.trim());
-                const original = button.textContent;
-                button.textContent = 'Copied!';
-                button.classList.add('copied');
-                setTimeout(() => {
-                    button.textContent = original;
-                    button.classList.remove('copied');
-                }, 1500);
-            } catch (err) {
-                console.error('Copy failed:', err);
-            }
+        document.querySelectorAll('.btn-copy').forEach(button => {
+            button.addEventListener('click', async () => {
+                const target = document.getElementById(button.dataset.target);
+                if (!target) return;
+                try {
+                    await navigator.clipboard.writeText(target.textContent.trim());
+                    const original = button.textContent;
+                    button.textContent = 'Copied!';
+                    button.classList.add('copied');
+                    setTimeout(() => { button.textContent = original; button.classList.remove('copied'); }, 1500);
+                } catch (err) {
+                    console.error('Copy failed:', err);
+                }
+            });
         });
     });
-});
 </script>
-    
+
 </body>
 </html>
