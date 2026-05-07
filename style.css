@@ -898,7 +898,13 @@ footer {
 }
 
 @media (max-width: 500px) {
-    .btn-divider { display: none; }
+    .btn-divider {
+        flex-basis: 100%;
+        width: auto;
+        height: 0;
+        background: transparent;
+        margin: 0;
+    }
     .course-panel-bibtex { padding-right: 18px; }
     .btn-copy {
         position: static;
