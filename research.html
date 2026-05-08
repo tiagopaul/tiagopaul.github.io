@@ -235,23 +235,21 @@
             button.addEventListener('click', () => {
                 const panel = document.getElementById(button.dataset.target);
                 if (!panel) return;
-                const wasOpen = !panel.hidden;
+                const wasOpen = panel.classList.contains('open');
                 const courseBox = button.closest('.course-box');
         
-                // Close every toggle and panel within this paper
                 if (courseBox) {
                     courseBox.querySelectorAll('.btn-toggle').forEach(b => {
                         b.classList.remove('active');
                         b.setAttribute('aria-expanded', 'false');
                     });
                     courseBox.querySelectorAll('.course-panel').forEach(p => {
-                        p.hidden = true;
+                        p.classList.remove('open');
                     });
                 }
         
-                // If the clicked panel wasn't already open, open it now
                 if (!wasOpen) {
-                    panel.hidden = false;
+                    panel.classList.add('open');
                     button.classList.add('active');
                     button.setAttribute('aria-expanded', 'true');
                 }
