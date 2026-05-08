@@ -235,10 +235,26 @@
             button.addEventListener('click', () => {
                 const panel = document.getElementById(button.dataset.target);
                 if (!panel) return;
-                const isOpen = !panel.hidden;
-                panel.hidden = isOpen;
-                button.classList.toggle('active', !isOpen);
-                button.setAttribute('aria-expanded', String(!isOpen));
+                const wasOpen = !panel.hidden;
+                const courseBox = button.closest('.course-box');
+        
+                // Close every toggle and panel within this paper
+                if (courseBox) {
+                    courseBox.querySelectorAll('.btn-toggle').forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-expanded', 'false');
+                    });
+                    courseBox.querySelectorAll('.course-panel').forEach(p => {
+                        p.hidden = true;
+                    });
+                }
+        
+                // If the clicked panel wasn't already open, open it now
+                if (!wasOpen) {
+                    panel.hidden = false;
+                    button.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
             });
         });
 
