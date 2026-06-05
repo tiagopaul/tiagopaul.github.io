@@ -129,7 +129,6 @@ header {
 /* -----------------------------------------------------
   HAMBURGER MENU FOR MOBILE
 ----------------------------------------------------- */
-/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -192,7 +191,6 @@ header {
         transform: rotate(-45deg) translate(6px, -6px);
     }
     
-    /* Optional: darken background when menu is open */
     .menu-overlay {
         display: none;
         position: fixed;
@@ -208,7 +206,6 @@ header {
         display: block;
     }
 }
-
 
 /* -----------------------------------------------------
    MAIN CONTENT
@@ -262,9 +259,9 @@ main {
 }
 
 .icon-circle {
-    width: 36px;                  /* 75% of previous size */
+    width: 36px;
     height: 36px;
-    background: rgba(21, 96, 130, 0.5);  /* 50% opacity header color */
+    background: rgba(21, 96, 130, 0.5);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -327,18 +324,18 @@ main {
 /* Meta information line (date · working paper) */
 .course-university {
     font-size: 0.95rem;
-    margin: 0 0 2px 0;  /* Reduced from 4px to 2px */
+    margin: 0 0 2px 0;
     display: flex;
     align-items: center;
-    column-gap: 10px;  /* Horizontal gap between items */
-    row-gap: 2px;       /* Small vertical gap when wrapped */
-    flex-wrap: wrap;  /* Allow the entire line to wrap if needed */
+    column-gap: 10px;
+    row-gap: 2px;
+    flex-wrap: wrap;
 }
 
 .course-university .course-date {
     font-weight: 900;
     color: #666;
-    white-space: nowrap;  /* Prevent "November 2023" from breaking */
+    white-space: nowrap;
 }
 
 .course-university .dot {
@@ -347,16 +344,13 @@ main {
     font-size: 1.3rem;
 }
 
-/* Let HTML control the styling of course-role */
 .course-university .course-role {
-    /* No font-weight or font-style specified here */
-    /* Style with <i>, <b>, <strong>, <em> in HTML */
-    white-space: nowrap;  /* Prevent "Working paper" from breaking */
+    white-space: nowrap;
 }
 
 /* Main title */
 .course-name {
-    margin: -2px 0 6px 0;  /* Reduced top margin to negative value */
+    margin: -2px 0 6px 0;
     font-size: 1.45rem;
     font-weight: bold;
     color: rgb(0, 90, 181);
@@ -467,58 +461,6 @@ main {
     }
 }
 
-@media (max-width: 500px) {
-    .course-box {
-        padding: 15px 16px;
-        margin-bottom: 16px;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .course-name {
-        font-size: 1.1rem;
-        margin-bottom: 4px;
-    }
-
-    .course-university {
-        font-size: 0.8rem;
-        margin-bottom: 2px;
-    }
-
-    .course-buttons {
-        gap: 6px;
-        margin-top: 8px;
-    }
-
-    .course-buttons .btn {
-        padding: 5px 9px;
-        font-size: 0.85rem;
-    }
-
-    main h1 {
-        font-size: 1.5rem;
-        margin-bottom: 16px;
-    }
-}
-
-@media (max-width: 500px) {
-    .course-box {
-        padding: 20px;
-    }
-    
-    /* Keep flex-wrap behavior, buttons stay inline when possible */
-    .course-buttons {
-        /* flex-wrap is already set in main rule, no changes needed */
-    }
-    
-    .course-buttons .btn {
-        /* Remove width: 100% to let buttons size naturally */
-        padding: 8px 12px;
-        font-size: 0.9rem;
-        text-align: center;
-        box-sizing: border-box;
-    }
-}
-
 /* -----------------------------------------------------
    PAGE HEADINGS
 ----------------------------------------------------- */
@@ -536,10 +478,9 @@ footer {
     margin-top: 60px;
     padding: 40px 0;
     color: white;
-    background: rgba(21, 96, 130, 0.5); /* 50% opacity of header */
+    background: rgba(21, 96, 130, 0.5);
 }
 
-/* Update footer container to use flexbox */
 .footer-container {
     display: flex;
     justify-content: space-between;
@@ -554,14 +495,6 @@ footer {
     height: 60px;
     width: auto;
     max-height: 60px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 500px) {
-    .footer-container {
-        flex-direction: column;
-        gap: 15px;
-    }
 }
 
 /* -----------------------------------------------------
@@ -603,24 +536,6 @@ footer {
     flex-shrink: 0;
 }
 
-/* Fix presentation box overflow on mobile */
-@media (max-width: 500px) {
-    .presentations-list {
-      font-size: 0.9rem; /* Slightly smaller text */
-        word-break: break-word;
-        overflow-wrap: break-word;
-    }
-    
-    .presentations-list a {
-        word-break: break-word
-    }
-    
-    /* Reduce padding on mobile for more space */
-    .course-box {
-        padding: 20px;
-    }
-}
-
 /* -----------------------------------------------------
    CAROUSEL
 ----------------------------------------------------- */
@@ -638,26 +553,24 @@ footer {
     display: block;
 }
 
-/* Caption with integrated navigation */
 .carousel-caption-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Changed from center */
+    justify-content: space-between;
     gap: 10px;
     margin-bottom: 8px;
     min-height: 48px;
-    width: 100%; /* Ensure full width */
+    width: 100%;
 }
 
 .carousel-caption {
     font-size: 0.9rem;
     color: #444;
     text-align: center;
-    flex: 1; /* Changed to take up all available space */
-    padding: 0 10px; /* Add some padding from buttons */
+    flex: 1;
+    padding: 0 10px;
 }
 
-/* Navigation arrows beside caption */
 .carousel-btn {
     background: rgba(21,96,130,0.3);
     border: none;
@@ -674,7 +587,6 @@ footer {
     color: white;
 }
 
-/* Image wrapper with fixed height */
 .carousel-image-wrapper {
     padding: 12px;
     border-radius: 10px;
@@ -684,7 +596,7 @@ footer {
         rgba(255,255,255,0.5),
         rgba(255,255,255,0)
     );
-    height: 300px; /* Fixed height container */
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -697,7 +609,6 @@ footer {
     object-fit: contain;
 }
 
-/* Remove the old controls section */
 .carousel-controls {
     display: none;
 }
@@ -718,37 +629,12 @@ footer {
     flex: 1;
 }
 
-/* Mobile: stack vertically */
 @media (max-width: 850px) {
     .abstract-carousel-container {
         flex-direction: column;
     }
     
     .abstract-carousel-container > div {
-        width: 100%;
-        flex: unset;
-    }
-}
-
-/* Carousel and presentations container */
-.carousel-presentations-container {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.carousel-presentations-container > div {
-    flex: 1;
-}
-
-/* Mobile: stack vertically */
-@media (max-width: 850px) {
-    .carousel-presentations-container {
-        flex-direction: column;
-    }
-    
-    .carousel-presentations-container > div,
-    .carousel-presentations-container > section {
         width: 100%;
         flex: unset;
     }
@@ -764,24 +650,21 @@ footer {
   display: flex;
   gap: 30px;
   align-items: flex-start;
-  flex-wrap: wrap;   /* allow children to wrap to next line on narrow screens */
+  flex-wrap: wrap;
 }
 
-/* force each column to be allowed to shrink */
 .carousel-presentations-container > div,
 .carousel-presentations-container > section {
-  flex: 1 1 0;   /* grow 1, shrink 1, base 0 */
-  min-width: 0;  /* critical: lets the item shrink below its content width */
+  flex: 1 1 0;
+  min-width: 0;
 }
 
-/* presentations box: full width inside its flex column */
 .carousel-presentations-container > section.course-box {
-  margin: 0;          /* you had margin: 0 earlier but ensure consistent */
+  margin: 0;
   width: 100%;
-  overflow-wrap: anywhere; /* allow long words / links to wrap */
+  overflow-wrap: anywhere;
 }
 
-/* ensure images and wrappers don't force overflow */
 .carousel-image-wrapper,
 .carousel-img,
 .course-image img {
@@ -790,9 +673,19 @@ footer {
   display: block;
 }
 
-/* if you want the presentations box to be slightly narrower on large screens */
+@media (max-width: 850px) {
+    .carousel-presentations-container {
+        flex-direction: column;
+    }
+    
+    .carousel-presentations-container > div,
+    .carousel-presentations-container > section {
+        width: 100%;
+        flex: unset;
+    }
+}
+
 @media (min-width: 1000px) {
-  /* e.g. give carousel 60% and presentations 40% */
   .carousel-presentations-container > div:first-child { flex: 0 1 60%; }
   .carousel-presentations-container > section { flex: 0 1 40%; }
 }
@@ -940,7 +833,57 @@ footer {
     border-color: rgb(21, 96, 130);
 }
 
+/* -----------------------------------------------------
+   MOBILE (max-width: 500px) — all rules merged here
+----------------------------------------------------- */
 @media (max-width: 500px) {
+    .course-box {
+        padding: 15px 16px;
+        margin-bottom: 16px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .course-name {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+
+    .course-university {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+
+    .course-buttons {
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .course-buttons .btn {
+        padding: 5px 9px;
+        font-size: 0.85rem;
+        box-sizing: border-box;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .presentations-list {
+        font-size: 0.9rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .presentations-list a {
+        word-break: break-word;
+    }
+
     .btn-divider {
         flex-basis: 100%;
         width: auto;
@@ -948,7 +891,11 @@ footer {
         background: transparent;
         margin: 0;
     }
-    .course-panel-bibtex { padding-right: 18px; }
+
+    .course-panel-bibtex {
+        padding-right: 18px;
+    }
+
     .btn-copy {
         position: static;
         display: inline-block;
