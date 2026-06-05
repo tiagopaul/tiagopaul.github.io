@@ -837,11 +837,11 @@ footer {
    MOBILE (max-width: 500px) — all rules merged here
 ----------------------------------------------------- */
 @media (max-width: 500px) {
-    .course-box {
-        padding: 15px 16px;
+   .course-box {
+        padding: 12px 14px; /* reduce top/bottom from 15px to 12px */
         margin-bottom: 16px;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
+   }
 
     .course-name {
         font-size: 1.1rem;
@@ -859,14 +859,13 @@ footer {
     }
 
     .course-buttons .btn {
-        padding: 5px 9px;
-        font-size: 0.85rem;
-        box-sizing: border-box;
+        padding: 3px 8px;   /* smaller height */
+        font-size: 0.8rem;
     }
 
     main h1 {
-        font-size: 1.5rem;
-        margin-bottom: 16px;
+        font-size: 1.25rem; /* down from 1.5rem */
+        margin-bottom: 12px;
     }
 
     .footer-container {
