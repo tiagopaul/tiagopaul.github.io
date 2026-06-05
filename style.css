@@ -468,8 +468,35 @@ main {
 }
 
 @media (max-width: 500px) {
+    .course-box {
+        padding: 15px 16px;
+        margin-bottom: 16px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
     .course-name {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+
+    .course-university {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+
+    .course-buttons {
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .course-buttons .btn {
+        padding: 5px 9px;
+        font-size: 0.85rem;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
     }
 }
 
