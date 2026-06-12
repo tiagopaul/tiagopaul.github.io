@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- ============================================================= -->
+<!-- HEAD: meta, title, stylesheets, fonts, page-specific styles   -->
+<!-- ============================================================= -->
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +11,8 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="personal_files/tp_icon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Page-specific styles: filters + search bar -->
     <style>
         .filter-section { margin-bottom: 15px; }
         .filter-label { font-size: 0.9em; color: #666; margin-bottom: 10px; font-weight: 600; }
@@ -20,17 +26,22 @@
         .subfield-section.visible { display: block; }
     </style>
 </head>
+
 <body>
 
-<!-- Reusable icon definitions (referenced via <use href="#..."/>) -->
+<!-- ============================================================= -->
+<!-- SVG ICON DEFINITIONS: reusable icons referenced via <use/>     -->
+<!-- ============================================================= -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
+        <!-- Document icon -->
         <g id="icon-doc">
             <path d="M3 1.5h6.5L13 5v9.5H3z"/>
             <path d="M9.5 1.5V5H13"/>
             <line x1="5.5" y1="8.5" x2="10.5" y2="8.5"/>
             <line x1="5.5" y1="11" x2="10.5" y2="11"/>
         </g>
+        <!-- Slides icon -->
         <g id="icon-slides">
             <rect x="1.5" y="2" width="13" height="9" rx="0.5"/>
             <line x1="8" y1="11" x2="8" y2="14"/>
@@ -42,6 +53,9 @@
     </defs>
 </svg>
 
+<!-- ============================================================= -->
+<!-- HEADER: site name + navigation menu                            -->
+<!-- ============================================================= -->
 <header>
     <div class="container header-container">
         <a href="index.html" class="site-name">
@@ -59,10 +73,20 @@
     </div>
 </header>
 
+<!-- ============================================================= -->
+<!-- MAIN CONTENT                                                   -->
+<!-- ============================================================= -->
 <main>
     <div class="container">
 
+        <!-- ----------------------------------------------------- -->
+        <!-- FILTER / SEARCH UI (currently disabled)               -->
+        <!-- ----------------------------------------------------- -->
+
+        <!-- Search bar (disabled) -->
         <!-- <input type="text" class="search-bar" placeholder="Search papers..." oninput="applyFilters()"> -->
+
+        <!-- Field filters (disabled) -->
         <!--
         <div class="filter-section">
             <div class="filter-label">Filter by field:</div>
@@ -73,14 +97,19 @@
         </div>
         -->
 
+        <!-- Subfield filters (populated by JS when fields are active) -->
         <div class="filter-section subfield-section" id="subfield-section">
             <div class="filter-label">Filter by subfield:</div>
             <div class="filter-tags" id="subfield-filters"></div>
         </div>
 
-        <!-- ============== WORKING PAPERS (uncomment when ready) ==============
+        <!-- ===================================================== -->
+        <!-- SECTION: WORKING PAPERS (disabled — uncomment when ready) -->
+        <!-- ===================================================== -->
+        <!--
         <h1>Working Papers</h1>
 
+        ===== PAPER: Fiscal-Mobility Stabilisers in Currency Unions =====
         <section class="course-box" data-tags="Macroeconomics,Labour Economics" data-subfields="Fiscal Policy,Migration" data-title="Fiscal-Mobility Stabilisers in Currency Unions">
             <div class="course-university">
                 <span class="course-date">JUNE 2026</span><span class="dot">&middot;</span><span class="course-role"><i>Working paper</i></span>
@@ -91,15 +120,25 @@
                 <a href="research_projects/fiscalmobility/slides_fiscalmobility.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-slides"/></svg>Slides</a>
             </div>
         </section>
-        ============== END WORKING PAPERS ============== -->
+        -->
 
+        <!-- ===================================================== -->
+        <!-- SECTION: PRE-DOCTORAL PAPERS                          -->
+        <!-- ===================================================== -->
         <h1>Pre-Doctoral Papers</h1>
 
+        <!-- ===== PAPER: Heterogeneous Labour Market Concentration and Minimum Wage Policy ===== -->
         <section class="course-box" data-tags="Labour Economics" data-subfields="Minimum Wages,Monopsony" data-title="Heterogeneous Labour Market Concentration and Minimum Wage Policy">
+
+            <!-- Meta line: date + role -->
             <div class="course-university">
                 <span class="course-date">NOVEMBER 2023</span><span class="dot">&middot;</span><span class="course-role"><i>Resting paper</i></span>
             </div>
+
+            <!-- Title -->
             <h2 class="course-name"><a href="research_projects/HetLabMarCon.pdf" target="_blank">Heterogeneous Labour Market Concentration and Minimum Wage Policy</a></h2>
+
+            <!-- Buttons: links + panel toggles -->
             <div class="course-buttons">
                 <a href="research_projects/HetLabMarCon.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
                 <a href="research_projects/HetLabMarCon_slides.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-slides"/></svg>Slides</a>
@@ -109,14 +148,20 @@
                 <button type="button" class="btn btn-toggle" data-target="presentations-hetlabmarcon" aria-expanded="false">Presentations <span class="chevron" aria-hidden="true">▾</span></button>
                 <button type="button" class="btn btn-toggle" data-target="bibtex-hetlabmarcon" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
             </div>
+
+            <!-- Panel: abstract -->
             <div class="course-panel" id="abstract-hetlabmarcon">
                 <p>This paper empirically tests whether minimum wages may have positive employment effects when diverging from a perfect competition framework. I use administrative data from 1986 to 2013 to segment Portugal into several local labour markets and construct Herfindahl–Hirschman Indices to measure concentration levels in each market. I find that increased minimum wage exposure has differential employment effects depending on labour market concentration — estimates indicate employment responds negatively in highly competitive markets and positively in highly concentrated ones. These results are robust to the usage of instrumental variables and to different definitions of local labour markets, although the persistence of these effects varies across specifications. Labour markets are highly heterogeneous in their concentration level, which can help reconcile the conflicting results in the minimum wage literature and provide new policy insights.</p>
             </div>
+
+            <!-- Panel: presentations -->
             <div class="course-panel" id="presentations-hetlabmarcon">
                 <ul class="presentations-inline">
                     <li><span class="pres-date">July 2023</span><a href="https://nipe.eeg.uminho.pt/en/nipe-organises-the-16th-edition-of-the-annual-meeting-of-the-portuguese-economic-journal/" target="_blank">16th Annual Meeting of the Portuguese Economic Journal</a>, Braga</li>
                 </ul>
             </div>
+
+            <!-- Panel: BibTeX -->
             <div class="course-panel course-panel-bibtex" id="bibtex-hetlabmarcon">
                 <button type="button" class="btn-copy" data-target="bibtex-content-hetlabmarcon">Copy</button>
 <pre id="bibtex-content-hetlabmarcon">@unpublished{paul2023hetlabmarcon,
@@ -127,10 +172,14 @@
 }</pre>
             </div>
         </section>
+        <!-- ===== END PAPER: Heterogeneous Labour Market Concentration ===== -->
 
     </div>
 </main>
 
+<!-- ============================================================= -->
+<!-- FOOTER: affiliation logo + copyright                           -->
+<!-- ============================================================= -->
 <footer>
     <div class="container footer-container">
         <a href="https://www.lse.ac.uk/economics" target="_blank"><img src="personal_files/lse_logo.png" alt="" class="footer-image"></a>
@@ -138,8 +187,16 @@
     </div>
 </footer>
 
+<!-- ============================================================= -->
+<!-- SCRIPTS                                                        -->
+<!-- ============================================================= -->
+
+<!-- External: navigation menu (hamburger toggle) -->
 <script src="navigation_menu.js"></script>
 
+<!-- ----------------------------------------------------- -->
+<!-- SCRIPT: filter logic (field / subfield / search)      -->
+<!-- ----------------------------------------------------- -->
 <script>
     // Filter logic (used when the filter UI above is uncommented)
     const subfieldsByField = { 'Labour Economics': ['Minimum Wages', 'Monopsony'] };
@@ -226,6 +283,9 @@
     }
 </script>
 
+<!-- ----------------------------------------------------- -->
+<!-- SCRIPT: panel toggles + copy-to-clipboard             -->
+<!-- ----------------------------------------------------- -->
 <script>
     // Toggle panels and copy-to-clipboard
     document.addEventListener('DOMContentLoaded', () => {
