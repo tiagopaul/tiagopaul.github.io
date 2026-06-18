@@ -8,8 +8,92 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="personal_files/tp_icon.png" />
-</head>
 
+    <!-- Scoped styling for the conference box. Self-contained so it does not depend on style.css. -->
+    <style>
+        .conf-box {
+            border: 1px solid #e2e2e2;
+            border-left: 5px solid #6f1d46; /* accent — adjust to match your site's colour if needed */
+            border-radius: 8px;
+            background: #fafafa;
+            padding: 1.5rem 1.75rem;
+            margin: 1.5rem 0 2.5rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+        .conf-box .conf-eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.72rem;
+            color: #6f1d46;
+            font-weight: 600;
+            margin: 0 0 0.4rem;
+        }
+        .conf-box h2 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0 0 0.5rem;
+            color: #1a1a1a;
+        }
+        .conf-box .conf-meta {
+            font-size: 0.95rem;
+            color: #444;
+            margin: 0 0 0.75rem;
+        }
+        .conf-box .conf-meta i {
+            margin-right: 0.4rem;
+            color: #6f1d46;
+        }
+        .conf-box .conf-desc {
+            font-size: 0.95rem;
+            color: #333;
+            margin: 0 0 1rem;
+            line-height: 1.5;
+        }
+        .conf-box .conf-deadline {
+            display: inline-block;
+            background: #6f1d46;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            margin: 0 0 1.1rem;
+        }
+        .conf-box .conf-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .conf-box .conf-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.55rem 1.1rem;
+            border-radius: 5px;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .conf-box .conf-btn-primary {
+            background: #6f1d46;
+            color: #fff;
+        }
+        .conf-box .conf-btn-primary:hover {
+            background: #561537;
+        }
+        .conf-box .conf-btn-secondary {
+            background: #fff;
+            color: #6f1d46;
+            border: 1px solid #6f1d46;
+        }
+        .conf-box .conf-btn-secondary:hover {
+            background: #6f1d46;
+            color: #fff;
+        }
+    </style>
+</head>
 <body>
 <header>
     <div class="container header-container">
@@ -34,19 +118,41 @@
     
 <main>
     <div class="container">
+
+        <!-- Conference advertisement box -->
+        <section class="conf-box">
+            <p class="conf-eyebrow">Conference</p>
+            <h2>LSE PhD Macro Workshop</h2>
+            <p class="conf-meta">
+                <i class="fas fa-calendar-day"></i>20 November 2026
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <i class="fas fa-location-dot"></i>LSE
+            </p>
+            <p class="conf-desc">
+                [Placeholder — add your description here.]
+            </p>
+            <span class="conf-deadline">Apply before 15 August 2026</span>
+            <div class="conf-buttons">
+                <a href="https://sites.google.com/view/london-macro-phd-workshop/home" target="_blank" class="conf-btn conf-btn-primary">
+                    <i class="fas fa-globe"></i> Workshop website
+                </a>
+                <!-- Replace href with the path to your Call for Papers PDF, e.g. personal_files/CallForPapers.pdf -->
+                <a href="personal_files/CallForPapers.pdf" target="_blank" class="conf-btn conf-btn-secondary">
+                    <i class="fas fa-file-pdf"></i> Call for Papers (PDF)
+                </a>
+            </div>
+        </section>
         
         <section class="intro-wrapper">
             
             <div class="intro-left">
                 <h1 class="home-name">Tiago Paúl</h1>
                 <p class="home-role" style="margin-top: 0;">PhD Student in Economics at the London School of Economics</p>
-
                 <div class="about-text">
                     <p>I am a second-year PhD student in Economics at the London School of Economics (LSE), under the supervision of <a href="https://www.r2rsquared.com/" target="_blank">Ricardo Reis</a>. My main research interests are in structural and empirical macroeconomics, particularly in topics relating to fiscal policy and labour markets.</p>
                 
                     <p>You can contact me at <a href="mailto:t.brinkmann-torres@lse.ac.uk">t.brinkmann-torres@lse.ac.uk</a>.</p>
                 </div>
-
                 <div class="contact-icons" style="margin-top: 1.5rem;">
                     <a href="mailto:t.brinkmann-torres@lse.ac.uk" class="icon-circle"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/tiagopaul" target="_blank" class="icon-circle"><i class="fab fa-linkedin-in"></i></a>
@@ -55,16 +161,12 @@
                     <a href="https://www.lse.ac.uk/people/tiago-paul" target="_blank" class="icon-circle"><i class="fas fa-university"></i></a>
                 </div>
             </div>
-
             <div class="intro-photo">
                 <img src="personal_files/MRes1.jpg" alt="Tiago Paúl">
             </div>
-
         </section>
-
     </div>
 </main>
-
 <footer>
     <div class="container footer-container">
         <a href="https://www.lse.ac.uk/economics" target="_blank">
@@ -73,8 +175,6 @@
         <p>&copy; 2025 Tiago Paúl</p>
     </div>
 </footer>
-
 <script src="navigation_menu.js"></script>
-
 </body>
 </html>
