@@ -12,19 +12,19 @@
     <!-- Scoped styling for the conference box. Self-contained so it does not depend on style.css. -->
     <style>
         .conf-box {
-            border: 1px solid #e2e2e2;
-            border-left: 5px solid #6f1d46; /* accent — adjust to match your site's colour if needed */
+            border: 1px solid #e1e1e1;
+            border-left: 5px solid rgb(21, 96, 130); /* accent */
             border-radius: 8px;
-            background: #fafafa;
+            background: #ffffff;
             padding: 1.5rem 1.75rem;
             margin: 1.5rem 0 2.5rem;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
         }
         .conf-box .conf-eyebrow {
             text-transform: uppercase;
             letter-spacing: 0.08em;
             font-size: 0.72rem;
-            color: #6f1d46;
+            color: rgb(21, 96, 130);
             font-weight: 600;
             margin: 0 0 0.4rem;
         }
@@ -42,23 +42,13 @@
         }
         .conf-box .conf-meta i {
             margin-right: 0.4rem;
-            color: #6f1d46;
+            color: rgb(21, 96, 130);
         }
         .conf-box .conf-desc {
             font-size: 0.95rem;
             color: #333;
             margin: 0 0 1rem;
             line-height: 1.5;
-        }
-        .conf-box .conf-deadline {
-            display: inline-block;
-            background: #6f1d46;
-            color: #fff;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.3rem 0.7rem;
-            border-radius: 4px;
-            margin: 0 0 1.1rem;
         }
         .conf-box .conf-buttons {
             display: flex;
@@ -74,23 +64,26 @@
             font-weight: 600;
             padding: 0.55rem 1.1rem;
             border-radius: 5px;
-            transition: background 0.15s ease, color 0.15s ease;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
         }
         .conf-box .conf-btn-primary {
-            background: #6f1d46;
+            background: rgb(21, 96, 130);
             color: #fff;
         }
         .conf-box .conf-btn-primary:hover {
-            background: #561537;
+            background: rgb(21, 96, 130);
+            color: rgb(255, 82, 82);
+            transform: translateY(-2px);
         }
         .conf-box .conf-btn-secondary {
             background: #fff;
-            color: #6f1d46;
-            border: 1px solid #6f1d46;
+            color: rgb(21, 96, 130);
+            border: 1.5px solid rgba(21, 96, 130, 0.5);
         }
         .conf-box .conf-btn-secondary:hover {
-            background: #6f1d46;
-            color: #fff;
+            background: rgba(21, 96, 130, 0.08);
+            color: rgb(21, 96, 130);
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -119,30 +112,6 @@
 <main>
     <div class="container">
 
-        <!-- Conference advertisement box -->
-        <section class="conf-box">
-            <p class="conf-eyebrow">Conference</p>
-            <h2>LSE PhD Macro Workshop</h2>
-            <p class="conf-meta">
-                <i class="fas fa-calendar-day"></i>20 November 2026
-                &nbsp;&nbsp;|&nbsp;&nbsp;
-                <i class="fas fa-location-dot"></i>LSE
-            </p>
-            <p class="conf-desc">
-                [Placeholder — add your description here.]
-            </p>
-            <span class="conf-deadline">Apply before 15 August 2026</span>
-            <div class="conf-buttons">
-                <a href="https://sites.google.com/view/london-macro-phd-workshop/home" target="_blank" class="conf-btn conf-btn-primary">
-                    <i class="fas fa-globe"></i> Workshop website
-                </a>
-                <!-- Replace href with the path to your Call for Papers PDF, e.g. personal_files/CallForPapers.pdf -->
-                <a href="personal_files/CallForPapers.pdf" target="_blank" class="conf-btn conf-btn-secondary">
-                    <i class="fas fa-file-pdf"></i> Call for Papers (PDF)
-                </a>
-            </div>
-        </section>
-        
         <section class="intro-wrapper">
             
             <div class="intro-left">
@@ -163,6 +132,29 @@
             </div>
             <div class="intro-photo">
                 <img src="personal_files/MRes1.jpg" alt="Tiago Paúl">
+            </div>
+        </section>
+
+        <!-- Conference advertisement box -->
+        <section class="conf-box">
+            <p class="conf-eyebrow">Conference</p>
+            <h2>LSE PhD Macro Workshop</h2>
+            <p class="conf-meta">
+                <i class="fas fa-calendar-day"></i>20 November 2026
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <i class="fas fa-location-dot"></i>LSE
+            </p>
+            <p class="conf-desc">
+                [Placeholder — add your description here.]
+            </p>
+            <div class="conf-buttons">
+                <a href="https://sites.google.com/view/london-macro-phd-workshop/home" target="_blank" class="conf-btn conf-btn-primary">
+                    <i class="fas fa-globe"></i> Workshop website
+                </a>
+                <!-- Replace href with the path to your Call for Papers PDF, e.g. personal_files/CallForPapers.pdf -->
+                <a href="personal_files/CallForPapers.pdf" target="_blank" class="conf-btn conf-btn-secondary">
+                    <i class="fas fa-file-pdf"></i> Call for Papers (PDF)
+                </a>
             </div>
         </section>
     </div>
