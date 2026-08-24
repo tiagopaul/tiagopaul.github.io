@@ -427,17 +427,18 @@ main {
 }
 
 .course-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
 .course-grid .course-box {
-    flex: 1;
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
     .course-grid {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 }
 
