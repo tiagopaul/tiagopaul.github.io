@@ -466,10 +466,34 @@ main {
    PAGE HEADINGS
 ----------------------------------------------------- */
 main h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: black;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(21, 96, 130);
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    white-space: nowrap;
 }
+
+/* Hairline that fades from the red accent into nothing */
+main h1::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgb(255, 82, 82) 0,
+        rgba(21, 96, 130, 0.35) 18%,
+        rgba(21, 96, 130, 0) 85%
+    );
+}
+
+/* Spacing rhythm */
+main h1 + .course-box { margin-top: 0; }
+.course-box + h1 { margin-top: 48px; }
 
 /* -----------------------------------------------------
    FOOTER
@@ -865,9 +889,13 @@ footer {
     }
 
     main h1 {
-        font-size: 1.25rem; /* down from 1.5rem */
-        margin-bottom: 12px;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        gap: 12px;
+        margin-bottom: 14px;
     }
+
+    .course-box + h1 { margin-top: 28px; }
 
     .footer-container {
         flex-direction: column;
