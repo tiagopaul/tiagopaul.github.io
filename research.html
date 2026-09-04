@@ -50,6 +50,24 @@
             <line x1="8" y1="8.5" x2="8" y2="4.5"/>
             <line x1="11" y1="8.5" x2="11" y2="5.5"/>
         </g>
+        <!-- Single author icon -->
+        <g id="icon-user">
+            <circle cx="8" cy="5" r="2.75"/>
+            <path d="M2.75 14.5c0-2.9 2.35-5.25 5.25-5.25s5.25 2.35 5.25 5.25"/>
+        </g>
+        <!-- Coauthors icon -->
+        <g id="icon-users">
+            <circle cx="6" cy="5" r="2.5"/>
+            <path d="M1.5 14.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5"/>
+            <path d="M11 3.1a2.5 2.5 0 0 1 0 4.8"/>
+            <path d="M12.5 10.4c1.2.7 2 2 2 3.6"/>
+        </g>
+        <!-- Info icon, used by the UPDATED flag -->
+        <g id="icon-info">
+            <circle cx="8" cy="8" r="6.5"/>
+            <line x1="8" y1="7.5" x2="8" y2="11.5"/>
+            <line x1="8" y1="4.8" x2="8" y2="5"/>
+        </g>
     </defs>
 </svg>
 
@@ -103,29 +121,43 @@
             <div class="filter-tags" id="subfield-filters"></div>
         </div>
 
-        <!-- ===================================================== --!>
-        <!-- SECTION: WORKING PAPERS (disabled — uncomment when ready) --!>
-        <!-- ===================================================== --!>
+        <!-- ===================================================== -->
+        <!-- SECTION: WORKING PAPERS                               -->
+        <!-- ===================================================== -->
         <h1>Working Papers</h1>
 
-        <!-- ===== PAPER: Fiscal-Mobility Propagation in Currency Unions ===== --!>
-        <section class="course-box" data-tags="Macroeconomics,Labour Economics" data-subfields="Fiscal Policy,Migration" data-title="Fiscal-Mobility Stabilisers in Currency Unions">
+        <!-- ===== PAPER: Fiscal-Mobility Propagation in Currency Unions ===== -->
+        <section class="course-box" data-tags="Macroeconomics,Labour Economics" data-subfields="Fiscal Policy,Migration" data-title="Fiscal-Mobility Propagation in Currency Unions">
+
+            <!-- Meta row: badge, date, flag -->
             <div class="course-university">
-                <span class="course-date">JUNE 2026</span><span class="dot">&middot;</span><span class="course-role"><i>Working paper</i></span>
+                <span class="course-role">Working paper</span>
+                <span class="course-date">JUNE 2026</span>
+                <span class="flag" data-flag-date="2026-06-30">New</span>
             </div>
+
+            <!-- Title -->
             <h2 class="course-name"><a href="research_projects/FiscMobProp.pdf" target="_blank">Fiscal-Mobility Propagation in Currency Unions</a></h2>
+
+            <!-- Authors -->
+            <p class="course-authors">
+                <svg class="author-icon" viewBox="0 0 16 16"><use href="#icon-user"/></svg>
+                <span>Solo-authored</span>
+            </p>
+
+            <!-- Buttons: files then panel toggles -->
             <div class="course-buttons">
-                <a href="research_projects/FiscMobProp.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
+                <a href="research_projects/FiscMobProp.pdf" target="_blank" class="btn btn-main"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
                 <span class="btn-divider" aria-hidden="true"></span>
-                <button type="button" class="btn btn-toggle" data-target="abstract-fiscmobprop" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn btn-toggle" data-target="bibtex-fiscmobprop" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
+                <button type="button" class="btn-toggle" data-target="abstract-fiscmobprop" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
+                <button type="button" class="btn-toggle" data-target="bibtex-fiscmobprop" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
             </div>
 
             <!-- Panel: abstract -->
             <div class="course-panel" id="abstract-fiscmobprop">
                 <p>This paper argues that labour mobility shapes shock propagation in currency unions through its interaction with regional governments’ fiscal space, a mechanism beyond the standard Mundellian view. By developing a New Keynesian open-economy model of migration, I show analytically that when governments face binding debt limits, labour mobility exerts two opposing forces on fiscal space: emigration expands fiscal capacity through spillover effects that raise per-capita fiscal contributions, but contracts it through increased per-capita debt burden. The dominant effect dictates whether labour mobility enables a stronger expansionary fiscal response to negative idiosyncratic shocks, reinforcing its stabilising role; or forces governments into pro-cyclical fiscal consolidations, amplifying the original shock – the more probable equilibrium when debt is high. Using LinkedIn data to construct a novel panel of monthly intra-EU migration flows, I estimate an SVAR and local projection model to uncover that the fiscal-mobility amplification mechanism was prevalent during high-debt regimes in the EU between 2000 and 2019.</p>
             </div>
-        
+
             <!-- Panel: BibTeX -->
             <div class="course-panel course-panel-bibtex" id="bibtex-fiscmobprop">
                 <button type="button" class="btn-copy" data-target="bibtex-content-fiscmobprop">Copy</button>
@@ -146,23 +178,30 @@
         <!-- ===== PAPER: Heterogeneous Labour Market Concentration and Minimum Wage Policy ===== -->
         <section class="course-box" data-tags="Labour Economics" data-subfields="Minimum Wages,Monopsony" data-title="Heterogeneous Labour Market Concentration and Minimum Wage Policy">
 
-            <!-- Meta line: date + role -->
+            <!-- Meta row: badge + date -->
             <div class="course-university">
-                <span class="course-date">NOVEMBER 2023</span><span class="dot">&middot;</span><span class="course-role"><i>Resting paper</i></span>
+                <span class="course-role resting">Resting paper</span>
+                <span class="course-date">NOVEMBER 2023</span>
             </div>
 
             <!-- Title -->
             <h2 class="course-name"><a href="research_projects/HetLabMarCon.pdf" target="_blank">Heterogeneous Labour Market Concentration and Minimum Wage Policy</a></h2>
 
-            <!-- Buttons: links + panel toggles -->
+            <!-- Authors -->
+            <p class="course-authors">
+                <svg class="author-icon" viewBox="0 0 16 16"><use href="#icon-user"/></svg>
+                <span>Solo-authored</span>
+            </p>
+
+            <!-- Buttons: files then panel toggles -->
             <div class="course-buttons">
-                <a href="research_projects/HetLabMarCon.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
+                <a href="research_projects/HetLabMarCon.pdf" target="_blank" class="btn btn-main"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
                 <a href="research_projects/HetLabMarCon_slides.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-slides"/></svg>Slides</a>
                 <a href="research_projects/HetLabMarCon_msc.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>MSc Thesis</a>
                 <span class="btn-divider" aria-hidden="true"></span>
-                <button type="button" class="btn btn-toggle" data-target="abstract-hetlabmarcon" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn btn-toggle" data-target="presentations-hetlabmarcon" aria-expanded="false">Presentations <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn btn-toggle" data-target="bibtex-hetlabmarcon" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
+                <button type="button" class="btn-toggle" data-target="abstract-hetlabmarcon" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
+                <button type="button" class="btn-toggle" data-target="presentations-hetlabmarcon" aria-expanded="false">Presentations <span class="chevron" aria-hidden="true">▾</span></button>
+                <button type="button" class="btn-toggle" data-target="bibtex-hetlabmarcon" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
             </div>
 
             <!-- Panel: abstract -->
@@ -212,6 +251,9 @@
 
 <!-- External: navigation menu (hamburger toggle) -->
 <script src="navigation_menu.js"></script>
+
+<!-- External: NEW / UPDATED flags -->
+<script src="card_flags.js"></script>
 
 <!-- ----------------------------------------------------- -->
 <!-- SCRIPT: filter logic (field / subfield / search)      -->
@@ -314,7 +356,7 @@
                 if (!panel) return;
                 const wasOpen = panel.classList.contains('open');
                 const courseBox = button.closest('.course-box');
-        
+
                 if (courseBox) {
                     courseBox.querySelectorAll('.btn-toggle').forEach(b => {
                         b.classList.remove('active');
@@ -324,7 +366,7 @@
                         p.classList.remove('open');
                     });
                 }
-        
+
                 if (!wasOpen) {
                     panel.classList.add('open');
                     button.classList.add('active');
