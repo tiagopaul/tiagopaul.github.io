@@ -297,122 +297,330 @@ main {
     }
 }
 
+/* =====================================================
+   CARD SYSTEM — research, teaching, media
+   Replaces the COURSE / RESEARCH BOXES block in style.css
+   and the .course-buttons rules that follow it.
+===================================================== */
+
 /* -----------------------------------------------------
-   COURSE / RESEARCH BOXES
+   CARD SHELL
 ----------------------------------------------------- */
 .course-box {
     background-color: #ffffff;
-    padding: 25px 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    border: 1px solid #e1e1e1;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 13px 22px 14px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    border: 1px solid #e4e7ea;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+    transition: border-color 0.18s, box-shadow 0.18s;
 }
 
-/* Main container for course content */
-.course-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.course-box:hover {
+    border-color: rgba(21, 96, 130, 0.45);
+    box-shadow: 0 2px 6px rgba(16, 24, 40, 0.07);
 }
 
-.course-text {
-    flex: 1;
-}
-
-/* Meta information line (date · working paper) */
+/* -----------------------------------------------------
+   META ROW — badge, date, flag
+----------------------------------------------------- */
 .course-university {
-    font-size: 0.95rem;
-    margin: 0 0 2px 0;
     display: flex;
     align-items: center;
-    column-gap: 10px;
-    row-gap: 2px;
+    gap: 9px;
     flex-wrap: wrap;
+    font-size: 0.78rem;
+    margin: 0;
+}
+
+/* Status badge (was the italic role text) */
+.course-university .course-role {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(21, 96, 130, 0.09);
+    color: rgb(21, 96, 130);
+    white-space: nowrap;
+    font-style: normal;
+}
+
+/* Resting papers */
+.course-university .course-role.resting {
+    background: rgba(120, 120, 120, 0.13);
+    color: #5a5a5a;
+}
+
+/* Published papers — badge holds the journal name */
+.course-university .course-role.published {
+    background: rgba(15, 110, 86, 0.11);
+    color: #0f6e56;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-size: 12px;
+}
+
+/* Media outlets */
+.course-university .course-role.outlet {
+    background: rgba(153, 60, 29, 0.1);
+    color: #993c1d;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-size: 12px;
+    font-style: italic;
 }
 
 .course-university .course-date {
-    font-weight: 900;
-    color: #666;
+    font-weight: 400;
+    color: #9aa3ab;
+    letter-spacing: 0.04em;
     white-space: nowrap;
 }
 
-.course-university .dot {
-    margin: 0 0.2rem;
-    color: #777;
-    font-size: 1.3rem;
+/* Volume / issue / pages, for published work */
+.course-university .course-volume {
+    font-size: 0.82rem;
+    color: #5c6570;
 }
 
-.course-university .course-role {
-    white-space: nowrap;
+/* The middot separator is no longer used in the meta row */
+.course-university .dot { display: none; }
+
+/* -----------------------------------------------------
+   NEW / UPDATED FLAG
+   Hidden by default; revealed by card_flags.js only while
+   the flag date is within its window.
+----------------------------------------------------- */
+.flag-wrap {
+    position: relative;
+    display: inline-block;
 }
 
-/* Main title */
+.flag {
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    padding: 3px 7px;
+    border-radius: 4px;
+    background: rgb(255, 82, 82);
+    color: white;
+    display: none;
+    align-items: center;
+    gap: 4px;
+    vertical-align: middle;
+}
+
+.flag.visible { display: inline-flex; }
+
+.flag[role="button"] { cursor: pointer; }
+
+.flag[role="button"]:focus-visible {
+    outline: 2px solid rgb(21, 96, 130);
+    outline-offset: 2px;
+}
+
+.flag-note {
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 250px;
+    background: white;
+    border: 1px solid #e0e4e8;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.12);
+    padding: 11px 13px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #4a5259;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s;
+    z-index: 5;
+}
+
+.flag-note.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.flag-note b {
+    display: block;
+    font-weight: 500;
+    color: rgb(21, 96, 130);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+/* -----------------------------------------------------
+   TITLE
+----------------------------------------------------- */
 .course-name {
-    margin: -2px 0 6px 0;
-    font-size: 1.45rem;
-    font-weight: bold;
-    color: rgb(0, 90, 181);
-    line-height: 1.2;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #0d4f6c;
+    line-height: 1.25;
+    margin: 7px 0 4px;
 }
 
 .course-name a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.15s;
 }
 
 .course-name a:hover {
     color: rgb(255, 82, 82);
 }
 
-/* Description text */
+/* Course code, teaching cards only */
+.course-code {
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+    color: #8b949c;
+    margin: 9px 0 2px;
+}
+
+/* -----------------------------------------------------
+   AUTHOR LINE
+----------------------------------------------------- */
+.course-authors {
+    font-size: 0.92rem;
+    color: #5c6570;
+    margin: 0 0 11px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-align: left;
+}
+
+.course-authors .author-icon {
+    width: 16px;
+    height: 16px;
+    stroke: #9aa3ab;
+    fill: none;
+    stroke-width: 1.6;
+    flex-shrink: 0;
+}
+
+.course-authors a {
+    color: rgb(21, 96, 130);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.course-authors a:hover {
+    color: rgb(255, 82, 82);
+}
+
+.course-authors .sep {
+    color: #c4cad0;
+    margin: 0 7px;
+}
+
+/* Translation line, media cards */
 .course-description {
-    font-size: 1rem;
-    margin-top: 4px;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    color: #7a838c;
+    font-style: italic;
+    margin: 0 0 11px;
+    text-align: left;
 }
 
-/* Image section */
-.course-image img {
-    width: 400px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.course-image a:hover img {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Action buttons */
+/* -----------------------------------------------------
+   BUTTON ROW — files (filled) vs toggles (outlined)
+----------------------------------------------------- */
 .course-buttons {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
+    align-items: center;
+    margin-top: auto;
 }
 
 .course-buttons .btn {
-    padding: 5px 10px;
-    border-radius: 6px;
-    background-color: rgba(21, 96, 130, 0.5);
-    color: white;
+    padding: 6px 12px;
+    border-radius: 7px;
+    background-color: rgba(21, 96, 130, 0.1);
+    color: #11536f;
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.86rem;
+    font-weight: 400;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+    transition: background-color 0.15s, color 0.15s;
 }
 
 .course-buttons .btn:hover {
     background-color: rgb(21, 96, 130);
     color: rgb(255, 82, 82);
-    transform: translateY(-2px);
+}
+
+/* Primary file link */
+.course-buttons .btn.btn-main {
+    background-color: rgb(21, 96, 130);
+    color: white;
+}
+
+.course-buttons .btn.btn-main:hover {
+    background-color: #0d4f6c;
+    color: rgb(255, 130, 130);
+}
+
+.btn-divider {
+    width: 1px;
+    height: 22px;
+    background: #dfe3e7;
+    align-self: center;
+    margin: 0 8px;
+}
+
+/* Expandable panel toggles */
+.course-buttons .btn-toggle {
+    padding: 6px 12px;
+    border-radius: 7px;
+    background-color: transparent;
+    color: rgb(21, 96, 130);
+    border: 1px solid rgba(21, 96, 130, 0.4);
+    font-family: inherit;
+    font-size: 0.86rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.course-buttons .btn-toggle:hover {
+    background-color: rgba(21, 96, 130, 0.08);
+    color: rgb(21, 96, 130);
+}
+
+.course-buttons .btn-toggle.active {
+    background-color: rgb(21, 96, 130);
+    color: white;
+    border-color: rgb(21, 96, 130);
+}
+
+.course-buttons .btn-toggle.active:hover {
+    color: rgb(255, 82, 82);
+}
+
+.course-buttons .btn-toggle .chevron {
+    font-size: 0.7em;
+    transition: transform 0.2s;
+}
+
+.course-buttons .btn-toggle.active .chevron {
+    transform: rotate(180deg);
 }
 
 .btn-icon {
@@ -426,39 +634,105 @@ main {
     flex-shrink: 0;
 }
 
+/* -----------------------------------------------------
+   TEACHING GRID
+----------------------------------------------------- */
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 14px;
 }
 
 .course-grid .course-box {
     margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 18px;
 }
 
-@media (max-width: 768px) {
-    .course-grid {
-        grid-template-columns: 1fr;
-    }
+.course-grid .course-name {
+    font-size: 1.08rem;
+    margin: 0 0 11px;
 }
 
+/* -----------------------------------------------------
+   MEDIA CARD — text left, outlet logo right
+----------------------------------------------------- */
+.course-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.course-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.course-image {
+    width: 104px;
+    flex-shrink: 0;
+    border-left: 1px solid #ebeef0;
+    padding-left: 20px;
+}
+
+.course-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -----------------------------------------------------
+   MOBILE
+----------------------------------------------------- */
 @media (max-width: 700px) {
     .course-content {
         flex-direction: column;
+        align-items: flex-start;
     }
 
-    .course-image img {
-        width: 100%;
-        margin-top: 10px;
+    .course-image {
+        width: 140px;
+        border-left: none;
+        padding-left: 0;
+        margin-top: 12px;
     }
-    
+}
+
+@media (max-width: 500px) {
+    .course-box {
+        padding: 12px 14px 13px;
+        margin-bottom: 10px;
+    }
+
     .course-name {
-        line-height: 1.15;
+        font-size: 1.05rem;
     }
-    
-    .course-description {
-        margin-top: 5px;
-        margin-bottom: 12px;
+
+    .course-university {
+        font-size: 0.72rem;
+    }
+
+    .course-buttons {
+        gap: 6px;
+    }
+
+    .course-buttons .btn,
+    .course-buttons .btn-toggle {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    .btn-divider {
+        flex-basis: 100%;
+        width: auto;
+        height: 0;
+        background: transparent;
+        margin: 0;
+    }
+
+    .flag-note {
+        width: 210px;
     }
 }
 
@@ -718,50 +992,6 @@ footer {
 /* -----------------------------------------------------
    EXPANDABLE PANELS (Abstract, Presentations, BibTeX)
 ----------------------------------------------------- */
-.btn-divider {
-    width: 1px;
-    height: 24px;
-    background: #d0d0d0;
-    align-self: center;
-    margin: 0 4px;
-}
-
-.course-buttons .btn-toggle {
-    background-color: transparent;
-    color: rgb(21, 96, 130);
-    border: 1.5px solid rgba(21, 96, 130, 0.5);
-    font-family: inherit;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.course-buttons .btn-toggle:hover {
-    background-color: rgba(21, 96, 130, 0.08);
-    color: rgb(21, 96, 130);
-    transform: translateY(-2px);
-}
-
-.course-buttons .btn-toggle.active {
-    background-color: rgb(21, 96, 130);
-    color: white;
-    border-color: rgb(21, 96, 130);
-}
-
-.course-buttons .btn-toggle.active:hover {
-    color: rgb(255, 82, 82);
-}
-
-.course-buttons .btn-toggle .chevron {
-    font-size: 0.7em;
-    transition: transform 0.2s;
-}
-
-.course-buttons .btn-toggle.active .chevron {
-    transform: rotate(180deg);
-}
-
 .course-panel {
     background: #f8f9fa;
     border-left: 3px solid rgb(21, 96, 130);
@@ -862,32 +1092,6 @@ footer {
    MOBILE (max-width: 500px) — all rules merged here
 ----------------------------------------------------- */
 @media (max-width: 500px) {
-   .course-box {
-        padding: 12px 14px; /* reduce top/bottom from 15px to 12px */
-        margin-bottom: 16px;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-   }
-
-    .course-name {
-        font-size: 1.1rem;
-        margin-bottom: 4px;
-    }
-
-    .course-university {
-        font-size: 0.8rem;
-        margin-bottom: 2px;
-    }
-
-    .course-buttons {
-        gap: 6px;
-        margin-top: 8px;
-    }
-
-    .course-buttons .btn {
-        padding: 3px 8px;   /* smaller height */
-        font-size: 0.8rem;
-    }
-
     main h1 {
         font-size: 0.82rem;
         letter-spacing: 0.12em;
@@ -910,14 +1114,6 @@ footer {
 
     .presentations-list a {
         word-break: break-word;
-    }
-
-    .btn-divider {
-        flex-basis: 100%;
-        width: auto;
-        height: 0;
-        background: transparent;
-        margin: 0;
     }
 
     .course-panel-bibtex {
