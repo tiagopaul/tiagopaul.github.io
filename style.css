@@ -639,7 +639,7 @@ main {
 ----------------------------------------------------- */
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     gap: 14px;
 }
 
@@ -670,7 +670,7 @@ main {
 }
 
 .course-image {
-    width: 104px;
+    width: 130px;
     flex-shrink: 0;
     border-left: 1px solid #ebeef0;
     padding-left: 20px;
