@@ -354,6 +354,12 @@ main {
     font-size: 12px;
 }
 
+/* Teaching roles */
+.course-university .course-role.role {
+    background: rgba(133, 79, 11, 0.11);
+    color: #854f0b;
+}
+
 /* Media outlets */
 .course-university .course-role.outlet {
     background: rgba(153, 60, 29, 0.1);
@@ -399,19 +405,16 @@ main {
 .course-topics {
     grid-column: 2;
     grid-row: 1;
-}
-
-/* Panels sit below both columns and span the full card */
-.course-box.has-tags > .course-panel {
-    grid-column: 1 / -1;
-}
-
-.course-topics {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     justify-content: flex-end;
     padding-top: 2px;
+}
+
+/* Panels sit below both columns and span the full card */
+.course-box.has-tags > .course-panel {
+    grid-column: 1 / -1;
 }
 
 .course-topics .tag {
