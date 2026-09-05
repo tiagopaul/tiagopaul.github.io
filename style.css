@@ -152,7 +152,7 @@ header {
     .hamburger {
         display: flex;
     }
-    
+
     .header-nav {
         position: fixed;
         top: 0;
@@ -166,31 +166,31 @@ header {
         box-shadow: -2px 0 10px rgba(0,0,0,0.1);
         z-index: 1000;
     }
-    
+
     .header-nav.active {
         right: 0;
     }
-    
+
     .header-nav a {
         margin: 0;
         padding: 15px 30px;
         border-bottom: 1px solid rgba(255,255,255,0.1);
         display: block;
     }
-    
+
     /* Hamburger animation when active */
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
-    
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
-    
+
     .menu-overlay {
         display: none;
         position: fixed;
@@ -201,7 +201,7 @@ header {
         background: rgba(0,0,0,0.5);
         z-index: 999;
     }
-    
+
     .menu-overlay.active {
         display: block;
     }
@@ -299,8 +299,6 @@ main {
 
 /* =====================================================
    CARD SYSTEM — research, teaching, media
-   Replaces the COURSE / RESEARCH BOXES block in style.css
-   and the .course-buttons rules that follow it.
 ===================================================== */
 
 /* -----------------------------------------------------
@@ -679,11 +677,13 @@ main {
 }
 
 /* -----------------------------------------------------
-   TEACHING GRID
+   CARD GRID (teaching, media)
+   auto-fill keeps the empty column, so a lone card stays
+   half width instead of stretching across the row.
 ----------------------------------------------------- */
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
     gap: 14px;
 }
 
@@ -697,6 +697,12 @@ main {
 .course-grid .course-name {
     font-size: 1.08rem;
     margin: 0 0 11px;
+}
+
+/* Media headline keeps the full title size */
+.media-grid .course-name {
+    font-size: 1.2rem;
+    margin: 7px 0 4px;
 }
 
 /* -----------------------------------------------------
@@ -727,9 +733,14 @@ main {
 }
 
 /* -----------------------------------------------------
-   MOBILE
+   CARD MOBILE
 ----------------------------------------------------- */
 @media (max-width: 700px) {
+    .course-box.has-tags {
+        flex-direction: column;
+        gap: 0;
+    }
+
     .course-content {
         flex-direction: column;
         align-items: flex-start;
@@ -749,7 +760,8 @@ main {
         margin-bottom: 10px;
     }
 
-    .course-name {
+    .course-name,
+    .media-grid .course-name {
         font-size: 1.05rem;
     }
 
@@ -976,7 +988,7 @@ footer {
     .abstract-carousel-container {
         flex-direction: column;
     }
-    
+
     .abstract-carousel-container > div {
         width: 100%;
         flex: unset;
@@ -1020,7 +1032,7 @@ footer {
     .carousel-presentations-container {
         flex-direction: column;
     }
-    
+
     .carousel-presentations-container > div,
     .carousel-presentations-container > section {
         width: 100%;
@@ -1133,7 +1145,7 @@ footer {
 }
 
 /* -----------------------------------------------------
-   MOBILE (max-width: 500px) — all rules merged here
+   MOBILE (max-width: 500px) — page-level rules
 ----------------------------------------------------- */
 @media (max-width: 500px) {
     main h1 {
