@@ -392,11 +392,13 @@ main {
 
 .course-body {
     grid-column: 1;
+    grid-row: 1;
     min-width: 0;
 }
 
 .course-topics {
     grid-column: 2;
+    grid-row: 1;
 }
 
 /* Panels sit below both columns and span the full card */
@@ -742,16 +744,21 @@ main {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .course-content {
+    /* Meta row stacks, so cards line up regardless of term length */
+    .course-grid .course-university {
         flex-direction: column;
         align-items: flex-start;
+        gap: 3px;
+    }
+
+    /* Logo stays beside the text, smaller */
+    .course-content {
+        gap: 14px;
     }
 
     .course-image {
-        width: 140px;
-        border-left: none;
-        padding-left: 0;
-        margin-top: 12px;
+        width: 92px;
+        padding-left: 14px;
     }
 }
 
