@@ -1,32 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- ============================================================= -->
-<!-- HEAD: meta, title, stylesheets, fonts, page-specific styles   -->
-<!-- ============================================================= -->
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research | Tiago Paúl</title>
+    <title>Teaching | Tiago Paúl</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="personal_files/tp_icon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Page-specific styles: filters + search bar -->
-    <style>
-        .filter-section { margin-bottom: 15px; }
-        .filter-label { font-size: 0.9em; color: #666; margin-bottom: 10px; font-weight: 600; }
-        .filter-tags { display: flex; gap: 10px; flex-wrap: wrap; }
-        .filter-tag { padding: 8px 16px; background: #f0f0f0; border-radius: 20px; font-size: 0.9em; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; }
-        .filter-tag:hover { background: #e0e0e0; }
-        .filter-tag.active { background: rgb(21, 96, 130); color: rgb(255, 82, 82); border-color: rgb(21, 96, 130); font-weight: 600; }
-        .search-bar { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; margin-bottom: 20px; transition: border-color 0.3s ease; }
-        .search-bar:focus { outline: none; border-color: rgb(21, 96, 130); }
-        .subfield-section { display: none; margin-top: 15px; }
-        .subfield-section.visible { display: block; }
-    </style>
 </head>
-
 <body>
 
 <!-- ============================================================= -->
@@ -41,225 +22,106 @@
             <line x1="5.5" y1="8.5" x2="10.5" y2="8.5"/>
             <line x1="5.5" y1="11" x2="10.5" y2="11"/>
         </g>
-        <!-- Slides icon -->
-        <g id="icon-slides">
-            <rect x="1.5" y="2" width="13" height="9" rx="0.5"/>
-            <line x1="8" y1="11" x2="8" y2="14"/>
-            <line x1="5" y1="14" x2="11" y2="14"/>
-            <line x1="5" y1="8.5" x2="5" y2="6.5"/>
-            <line x1="8" y1="8.5" x2="8" y2="4.5"/>
-            <line x1="11" y1="8.5" x2="11" y2="5.5"/>
-        </g>
-        <!-- Single author icon -->
-        <g id="icon-user">
-            <circle cx="8" cy="5" r="2.75"/>
-            <path d="M2.75 14.5c0-2.9 2.35-5.25 5.25-5.25s5.25 2.35 5.25 5.25"/>
-        </g>
-        <!-- Coauthors icon -->
-        <g id="icon-users">
-            <circle cx="6" cy="5" r="2.5"/>
-            <path d="M1.5 14.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5"/>
-            <path d="M11 3.1a2.5 2.5 0 0 1 0 4.8"/>
-            <path d="M12.5 10.4c1.2.7 2 2 2 3.6"/>
-        </g>
-        <!-- Info icon, used by the UPDATED flag -->
-        <g id="icon-info">
-            <circle cx="8" cy="8" r="6.5"/>
-            <line x1="8" y1="7.5" x2="8" y2="11.5"/>
-            <line x1="8" y1="4.8" x2="8" y2="5"/>
+        <!-- Star icon, used for student evaluations -->
+        <g id="icon-star">
+            <path d="M8 1.8l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.6l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/>
         </g>
     </defs>
 </svg>
 
-<!-- ============================================================= -->
-<!-- HEADER: site name + navigation menu                            -->
-<!-- ============================================================= -->
 <header>
     <div class="container header-container">
         <a href="index.html" class="site-name">
             <img src="personal_files/tp_icon.png" alt="" class="site-icon">
             Tiago Paúl
         </a>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="header-nav" id="nav-menu">
             <a href="index.html">Home</a>
-            <a href="research.html" class="active">Research</a>
-            <a href="teaching.html">Teaching</a>
+            <a href="research.html">Research</a>
+            <a href="teaching.html" class="active">Teaching</a>
             <a href="media.html">Media</a>
             <a href="personal_files/TiagoPaul_CV.pdf" target="_blank">CV</a>
         </nav>
     </div>
 </header>
 
-<!-- ============================================================= -->
-<!-- MAIN CONTENT                                                   -->
-<!-- ============================================================= -->
 <main>
     <div class="container">
+        <h1>London School of Economics</h1>
 
-        <!-- ----------------------------------------------------- -->
-        <!-- FILTER / SEARCH UI (currently disabled)               -->
-        <!-- ----------------------------------------------------- -->
+        <div class="course-grid">
 
-        <!-- Search bar (disabled) -->
-        <!-- <input type="text" class="search-bar" placeholder="Search papers..." oninput="applyFilters()"> -->
+            <!-- ===== EC102 ===== -->
+            <section class="course-box">
+                <div class="course-university">
+                    <span class="course-role role">Graduate teaching assistant</span>
+                    <span class="course-date">SUMMER SCHOOL 2025/26</span>
+                </div>
+                <div class="course-code">EC102</div>
+                <h2 class="course-name">
+                    <a href="https://www.lse.ac.uk/study-at-lse/summer-schools/summer-school/courses/economics/ec102" target="_blank">Introductory Macroeconomics</a>
+                </h2>
+                <div class="course-buttons">
+                    <a href="teaching_files/EC102_Syllabus.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Syllabus</a>
+                </div>
+            </section>
 
-        <!-- Field filters (disabled) -->
-        <!--
-        <div class="filter-section">
-            <div class="filter-label">Filter by field:</div>
-            <div class="filter-tags" id="field-filters">
-                <span class="filter-tag active" data-field="all" onclick="toggleField(this)">All</span>
-                <span class="filter-tag" data-field="Labour Economics" onclick="toggleField(this)">Labour Economics</span>
-            </div>
+            <!-- ===== EC101 ===== -->
+            <section class="course-box">
+                <div class="course-university">
+                    <span class="course-role role">Graduate teaching assistant</span>
+                    <span class="course-date">SUMMER SCHOOL 2025/26</span>
+                </div>
+                <div class="course-code">EC101</div>
+                <h2 class="course-name">
+                    <a href="https://www.lse.ac.uk/study-at-lse/summer-schools/summer-school/courses/economics/ec101" target="_blank">Introductory Microeconomics</a>
+                </h2>
+                <div class="course-buttons">
+                    <a href="teaching_files/EC101_Syllabus.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Syllabus</a>
+                </div>
+            </section>
+
+            <!-- ===== EC2B3 ===== -->
+            <section class="course-box">
+                <div class="course-university">
+                    <span class="course-role role">Graduate teaching assistant</span>
+                    <span class="course-date">WINTER TERM 2025/26&ndash;2026/27</span>
+                </div>
+                <div class="course-code">EC2B3</div>
+                <h2 class="course-name">
+                    <a href="https://www.lse.ac.uk/resources/calendar2025-2026/courseGuides/EC/2025_EC2B3.htm" target="_blank">Macroeconomics II</a>
+                </h2>
+                <div class="course-buttons">
+                    <a href="teaching_files/EC2B3_Syllabus.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Syllabus</a>
+                    <a href="teaching_files/07-EC2B3_WT26_Tiago_Paul.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-star"/></svg>Evaluations</a>
+                </div>
+            </section>
+
+            <!-- ===== EC1A3 ===== -->
+            <section class="course-box">
+                <div class="course-university">
+                    <span class="course-role role">Graduate teaching assistant</span>
+                    <span class="course-date">AUTUMN TERM 2025/26&ndash;2026/27</span>
+                </div>
+                <div class="course-code">EC1A3</div>
+                <h2 class="course-name">
+                    <a href="https://www.lse.ac.uk/resources/calendar2025-2026/courseGuides/EC/2025_EC1A3.htm" target="_blank">Microeconomics I</a>
+                </h2>
+                <div class="course-buttons">
+                    <a href="teaching_files/EC1A3_Syllabus.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Syllabus</a>
+                    <a href="teaching_files/14-EC1A3_AT25_Tiago_Paul.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-star"/></svg>Evaluations</a>
+                </div>
+            </section>
+
         </div>
-        -->
-
-        <!-- Subfield filters (populated by JS when fields are active) -->
-        <div class="filter-section subfield-section" id="subfield-section">
-            <div class="filter-label">Filter by subfield:</div>
-            <div class="filter-tags" id="subfield-filters"></div>
-        </div>
-
-        <!-- ===================================================== -->
-        <!-- SECTION: WORKING PAPERS                               -->
-        <!-- ===================================================== -->
-        <h1>Working Papers</h1>
-
-        <!-- ===== PAPER: Fiscal-Mobility Propagation in Currency Unions ===== -->
-        <section class="course-box has-tags" data-tags="Macroeconomics,Labour Economics" data-subfields="Fiscal Policy,Migration" data-title="Fiscal-Mobility Propagation in Currency Unions">
-
-            <div class="course-body">
-
-            <!-- Meta row: badge, date, flag -->
-            <div class="course-university">
-                <span class="course-role">Working paper</span>
-                <span class="course-date">JUNE 2026</span>
-                <span class="flag" data-flag-date="2026-06-30">New</span>
-            </div>
-
-            <!-- Title -->
-            <h2 class="course-name"><a href="research_projects/FiscMobProp.pdf" target="_blank">Fiscal-Mobility Propagation in Currency Unions</a></h2>
-
-            <!-- Authors -->
-            <p class="course-authors">
-                <svg class="author-icon" viewBox="0 0 16 16"><use href="#icon-user"/></svg>
-                <span>Solo-authored</span>
-            </p>
-
-            <!-- Buttons: files then panel toggles -->
-            <div class="course-buttons">
-                <a href="research_projects/FiscMobProp.pdf" target="_blank" class="btn btn-main"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
-                <span class="btn-divider" aria-hidden="true"></span>
-                <button type="button" class="btn-toggle" data-target="abstract-fiscmobprop" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn-toggle" data-target="bibtex-fiscmobprop" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
-            </div>
-
-            </div><!-- /.course-body -->
-
-            <!-- Panel: abstract -->
-            <div class="course-panel" id="abstract-fiscmobprop">
-                <p>This paper argues that labour mobility shapes shock propagation in currency unions through its interaction with regional governments’ fiscal space, a mechanism beyond the standard Mundellian view. By developing a New Keynesian open-economy model of migration, I show analytically that when governments face binding debt limits, labour mobility exerts two opposing forces on fiscal space: emigration expands fiscal capacity through spillover effects that raise per-capita fiscal contributions, but contracts it through increased per-capita debt burden. The dominant effect dictates whether labour mobility enables a stronger expansionary fiscal response to negative idiosyncratic shocks, reinforcing its stabilising role; or forces governments into pro-cyclical fiscal consolidations, amplifying the original shock – the more probable equilibrium when debt is high. Using LinkedIn data to construct a novel panel of monthly intra-EU migration flows, I estimate an SVAR and local projection model to uncover that the fiscal-mobility amplification mechanism was prevalent during high-debt regimes in the EU between 2000 and 2019.</p>
-            </div>
-
-            <!-- Panel: BibTeX -->
-            <div class="course-panel course-panel-bibtex" id="bibtex-fiscmobprop">
-                <button type="button" class="btn-copy" data-target="bibtex-content-fiscmobprop">Copy</button>
-<pre id="bibtex-content-fiscmobprop">@unpublished{paul2026fiscmobprop,
-  author = {Pa{\'u}l, Tiago},
-  title  = {Fiscal-Mobility Propagation in Currency Unions},
-  year   = {2026},
-  note   = {Working paper}
-}</pre>
-            </div>
-
-            <!-- Topic tags -->
-            <div class="course-topics">
-                <span class="tag">Macroeconomics</span>
-                <span class="tag">Fiscal policy</span>
-                <span class="tag">Migration</span>
-                <span class="tag">Currency unions</span>
-            </div>
-
-        </section>
-
-        <!-- ===================================================== -->
-        <!-- SECTION: PRE-DOCTORAL PAPERS                          -->
-        <!-- ===================================================== -->
-        <h1>Pre-Doctoral Papers</h1>
-
-        <!-- ===== PAPER: Heterogeneous Labour Market Concentration and Minimum Wage Policy ===== -->
-        <section class="course-box has-tags" data-tags="Labour Economics" data-subfields="Minimum Wages,Monopsony" data-title="Heterogeneous Labour Market Concentration and Minimum Wage Policy">
-
-            <div class="course-body">
-
-            <!-- Meta row: badge + date -->
-            <div class="course-university">
-                <span class="course-role resting">Resting paper</span>
-                <span class="course-date">NOVEMBER 2023</span>
-            </div>
-
-            <!-- Title -->
-            <h2 class="course-name"><a href="research_projects/HetLabMarCon.pdf" target="_blank">Heterogeneous Labour Market Concentration and Minimum Wage Policy</a></h2>
-
-            <!-- Authors -->
-            <p class="course-authors">
-                <svg class="author-icon" viewBox="0 0 16 16"><use href="#icon-user"/></svg>
-                <span>Solo-authored</span>
-            </p>
-
-            <!-- Buttons: files then panel toggles -->
-            <div class="course-buttons">
-                <a href="research_projects/HetLabMarCon.pdf" target="_blank" class="btn btn-main"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
-                <a href="research_projects/HetLabMarCon_slides.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-slides"/></svg>Slides</a>
-                <a href="research_projects/HetLabMarCon_msc.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>MSc Thesis</a>
-                <span class="btn-divider" aria-hidden="true"></span>
-                <button type="button" class="btn-toggle" data-target="abstract-hetlabmarcon" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn-toggle" data-target="presentations-hetlabmarcon" aria-expanded="false">Presentations <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn-toggle" data-target="bibtex-hetlabmarcon" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
-            </div>
-
-            </div><!-- /.course-body -->
-
-            <!-- Panel: abstract -->
-            <div class="course-panel" id="abstract-hetlabmarcon">
-                <p>This paper empirically tests whether minimum wages may have positive employment effects when diverging from a perfect competition framework. I use administrative data from 1986 to 2013 to segment Portugal into several local labour markets and construct Herfindahl–Hirschman Indices to measure concentration levels in each market. I find that increased minimum wage exposure has differential employment effects depending on labour market concentration — estimates indicate employment responds negatively in highly competitive markets and positively in highly concentrated ones. These results are robust to the usage of instrumental variables and to different definitions of local labour markets, although the persistence of these effects varies across specifications. Labour markets are highly heterogeneous in their concentration level, which can help reconcile the conflicting results in the minimum wage literature and provide new policy insights.</p>
-            </div>
-
-            <!-- Panel: presentations -->
-            <div class="course-panel" id="presentations-hetlabmarcon">
-                <ul class="presentations-inline">
-                    <li><span class="pres-date">July 2023</span><a href="https://nipe.eeg.uminho.pt/en/nipe-organises-the-16th-edition-of-the-annual-meeting-of-the-portuguese-economic-journal/" target="_blank">16th Annual Meeting of the Portuguese Economic Journal</a>, Braga</li>
-                </ul>
-            </div>
-
-            <!-- Panel: BibTeX -->
-            <div class="course-panel course-panel-bibtex" id="bibtex-hetlabmarcon">
-                <button type="button" class="btn-copy" data-target="bibtex-content-hetlabmarcon">Copy</button>
-<pre id="bibtex-content-hetlabmarcon">@unpublished{paul2023hetlabmarcon,
-  author = {Pa{\'u}l, Tiago},
-  title  = {Heterogeneous Labour Market Concentration and Minimum Wage Policy},
-  year   = {2023},
-  note   = {Working paper}
-}</pre>
-            </div>
-
-            <!-- Topic tags -->
-            <div class="course-topics">
-                <span class="tag">Labour economics</span>
-                <span class="tag">Minimum wages</span>
-                <span class="tag">Monopsony</span>
-            </div>
-
-        </section>
-        <!-- ===== END PAPER: Heterogeneous Labour Market Concentration ===== -->
-
     </div>
 </main>
 
-<!-- ============================================================= -->
-<!-- FOOTER: affiliation logo + copyright                           -->
-<!-- ============================================================= -->
 <footer>
     <div class="container footer-container">
 
@@ -287,153 +149,7 @@
     </div>
 </footer>
 
-<!-- ============================================================= -->
-<!-- SCRIPTS                                                        -->
-<!-- ============================================================= -->
-
-<!-- External: navigation menu (hamburger toggle) -->
 <script src="navigation_menu.js"></script>
-
-<!-- External: NEW / UPDATED flags -->
-<script src="card_flags.js"></script>
-
-<!-- ----------------------------------------------------- -->
-<!-- SCRIPT: filter logic (field / subfield / search)      -->
-<!-- ----------------------------------------------------- -->
-<script>
-    // Filter logic (used when the filter UI above is uncommented)
-    const subfieldsByField = { 'Labour Economics': ['Minimum Wages', 'Monopsony'] };
-    let activeFields = new Set(['all']);
-    let activeSubfields = new Set();
-
-    function toggleField(el) {
-        const field = el.dataset.field;
-        if (field === 'all') {
-            activeFields.clear(); activeFields.add('all');
-            document.querySelectorAll('#field-filters .filter-tag').forEach(t => t.classList.remove('active'));
-            el.classList.add('active');
-        } else {
-            activeFields.delete('all');
-            document.querySelector('#field-filters .filter-tag[data-field="all"]').classList.remove('active');
-            if (activeFields.has(field)) {
-                activeFields.delete(field);
-                el.classList.remove('active');
-                if (activeFields.size === 0) {
-                    activeFields.add('all');
-                    document.querySelector('#field-filters .filter-tag[data-field="all"]').classList.add('active');
-                }
-            } else {
-                activeFields.add(field);
-                el.classList.add('active');
-            }
-        }
-        updateSubfieldOptions();
-        applyFilters();
-    }
-
-    function updateSubfieldOptions() {
-        const subfieldSection = document.getElementById('subfield-section');
-        const subfieldFilters = document.getElementById('subfield-filters');
-        if (activeFields.has('all') || activeFields.size === 0) {
-            subfieldSection.classList.remove('visible');
-            activeSubfields.clear();
-            return;
-        }
-        const availableSubfields = new Set();
-        activeFields.forEach(f => { if (subfieldsByField[f]) subfieldsByField[f].forEach(sf => availableSubfields.add(sf)); });
-        activeSubfields.forEach(sf => { if (!availableSubfields.has(sf)) activeSubfields.delete(sf); });
-        subfieldFilters.innerHTML = '<span class="filter-tag active" data-subfield="all" onclick="toggleSubfield(this)">All</span>';
-        availableSubfields.forEach(sf => {
-            const isActive = activeSubfields.has(sf);
-            subfieldFilters.innerHTML += `<span class="filter-tag${isActive ? ' active' : ''}" data-subfield="${sf}" onclick="toggleSubfield(this)">${sf}</span>`;
-        });
-        if (activeSubfields.size > 0) subfieldFilters.querySelector('.filter-tag[data-subfield="all"]').classList.remove('active');
-        subfieldSection.classList.add('visible');
-    }
-
-    function toggleSubfield(el) {
-        const subfield = el.dataset.subfield;
-        if (subfield === 'all') {
-            activeSubfields.clear();
-            document.querySelectorAll('#subfield-filters .filter-tag').forEach(t => t.classList.remove('active'));
-            el.classList.add('active');
-        } else {
-            document.querySelector('#subfield-filters .filter-tag[data-subfield="all"]').classList.remove('active');
-            if (activeSubfields.has(subfield)) {
-                activeSubfields.delete(subfield);
-                el.classList.remove('active');
-                if (activeSubfields.size === 0) document.querySelector('#subfield-filters .filter-tag[data-subfield="all"]').classList.add('active');
-            } else {
-                activeSubfields.add(subfield);
-                el.classList.add('active');
-            }
-        }
-        applyFilters();
-    }
-
-    function applyFilters() {
-        const searchBar = document.querySelector('.search-bar');
-        const searchTerm = searchBar ? searchBar.value.toLowerCase() : '';
-        document.querySelectorAll('.course-box').forEach(paper => {
-            const title = (paper.dataset.title || '').toLowerCase();
-            const paperFields = (paper.dataset.tags || '').split(',');
-            const paperSubfields = (paper.dataset.subfields || '').split(',');
-            const matchesSearch = searchTerm === '' || title.includes(searchTerm);
-            const matchesField = activeFields.has('all') || paperFields.some(f => activeFields.has(f.trim()));
-            const matchesSubfield = activeSubfields.size === 0 || paperSubfields.some(sf => activeSubfields.has(sf.trim()));
-            paper.style.display = (matchesSearch && matchesField && matchesSubfield) ? 'block' : 'none';
-        });
-    }
-</script>
-
-<!-- ----------------------------------------------------- -->
-<!-- SCRIPT: panel toggles + copy-to-clipboard             -->
-<!-- ----------------------------------------------------- -->
-<script>
-    // Toggle panels and copy-to-clipboard
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.btn-toggle').forEach(button => {
-            button.addEventListener('click', () => {
-                const panel = document.getElementById(button.dataset.target);
-                if (!panel) return;
-                const wasOpen = panel.classList.contains('open');
-                const courseBox = button.closest('.course-box');
-
-                if (courseBox) {
-                    courseBox.querySelectorAll('.btn-toggle').forEach(b => {
-                        b.classList.remove('active');
-                        b.setAttribute('aria-expanded', 'false');
-                    });
-                    courseBox.querySelectorAll('.course-panel').forEach(p => {
-                        p.classList.remove('open');
-                    });
-                }
-
-                if (!wasOpen) {
-                    panel.classList.add('open');
-                    button.classList.add('active');
-                    button.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-
-        document.querySelectorAll('.btn-copy').forEach(button => {
-            button.addEventListener('click', async () => {
-                const target = document.getElementById(button.dataset.target);
-                if (!target) return;
-                try {
-                    await navigator.clipboard.writeText(target.textContent.trim());
-                    const original = button.textContent;
-                    button.textContent = 'Copied!';
-                    button.classList.add('copied');
-                    setTimeout(() => { button.textContent = original; button.classList.remove('copied'); }, 1500);
-                } catch (err) {
-                    console.error('Copy failed:', err);
-                }
-            });
-        });
-    });
-</script>
 
 </body>
 </html>
