@@ -834,7 +834,7 @@ main h1:not(.home-name)::after {
 
 /* Spacing rhythm */
 main h1:not(.home-name) + .course-box { margin-top: 0; }
-.course-box + h1 { margin-top: 48px; }
+main .course-box + h1:not(.home-name) { margin-top: 58px; }
 
 /* -----------------------------------------------------
    FOOTER
@@ -1206,7 +1206,7 @@ footer {
         margin-bottom: 14px;
     }
 
-    .course-box + h1 { margin-top: 28px; }
+    main .course-box + h1:not(.home-name) { margin-top: 34px; }
 
     .footer-container {
         flex-direction: column;
