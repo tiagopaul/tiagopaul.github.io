@@ -840,9 +840,8 @@ main h1 + .course-box { margin-top: 0; }
    FOOTER
 ----------------------------------------------------- */
 footer {
-    text-align: center;
     margin-top: 60px;
-    padding: 40px 0;
+    padding: 34px 0;
     color: white;
     background: rgba(21, 96, 130, 0.5);
 }
@@ -850,17 +849,50 @@ footer {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .footer-container p {
     margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Labelled logo groups */
+.footer-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    min-width: 118px;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
 }
 
 .footer-image {
-    height: 60px;
+    height: 46px;
     width: auto;
-    max-height: 60px;
+    display: block;
 }
 
 /* -----------------------------------------------------
@@ -1170,7 +1202,18 @@ footer {
 
     .footer-container {
         flex-direction: column;
-        gap: 15px;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .footer-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .footer-image {
+        height: 38px;
     }
 
     .presentations-list {
