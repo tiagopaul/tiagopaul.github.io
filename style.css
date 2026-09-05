@@ -230,74 +230,60 @@ main {
 
 .home-name {
     font-family: 'Roboto Slab', Georgia, serif;
-    font-weight: 700;
-    font-size: 2.3rem;
-    letter-spacing: -0.01em;
-    color: #1a1a1a;
-    margin: 0 0 4px 0;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0 0 10px 0;
 }
 
 .home-role {
-    font-size: 1.02rem;
-    color: #5c6570;
-    margin-bottom: 18px;
-}
-
-.about-text p {
-    font-size: 0.96rem;
-    color: #3d444b;
-    line-height: 1.65;
-    margin: 0 0 12px;
-}
-
-.about-text a {
-    color: rgb(21, 96, 130);
-    text-decoration: none;
-    transition: color 0.15s;
-}
-
-.about-text a:hover {
-    color: rgb(255, 82, 82);
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 25px;
 }
 
 /* Profile Photo */
 .intro-photo img {
-    width: 260px;
-    border-radius: 8px;
+    width: 330px;
+    border-radius: 6px;
     object-fit: cover;
 }
 
 /* -----------------------------------------------------
    CONTACT ICONS
 ----------------------------------------------------- */
-.contact-links {
-    margin-top: 18px;
+.contact-icons {
+    margin-top: 20px;
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    justify-content: left;
+    gap: 12px;
 }
 
-.link-chip {
-    display: inline-flex;
+.icon-circle {
+    width: 36px;
+    height: 36px;
+    background: rgba(21, 96, 130, 0.5);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 6px;
-    font-size: 0.86rem;
-    padding: 6px 12px;
-    border-radius: 7px;
-    background: rgba(21, 96, 130, 0.1);
-    color: #11536f;
-    text-decoration: none;
-    transition: background-color 0.15s, color 0.15s;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
-.link-chip:hover {
+.icon-circle:hover {
     background: rgb(21, 96, 130);
-    color: rgb(255, 82, 82);
+    transform: translateY(-3px);
+}
+
+.cv-icon {
+    font-size: 0.8rem;
 }
 
 /* Mobile */
 @media (max-width: 850px) {
-   .contact-links {
+   .contact-icons {
          justify-content: center;
     }
     .intro-wrapper {
@@ -307,11 +293,7 @@ main {
     }
 
     .intro-photo img {
-        width: 220px;
-    }
-
-    .about-text p {
-        text-align: left;
+        width: 240px;
     }
 }
 
@@ -867,7 +849,7 @@ footer {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     gap: 30px;
     flex-wrap: wrap;
 }
