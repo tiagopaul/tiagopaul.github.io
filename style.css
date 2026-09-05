@@ -384,21 +384,24 @@ main {
    TOPIC TAGS (research cards)
 ----------------------------------------------------- */
 .course-box.has-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 20px;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 210px;
+    column-gap: 20px;
+    align-items: start;
 }
 
 .course-body {
-    flex: 1;
+    grid-column: 1;
     min-width: 0;
+}
+
+.course-topics {
+    grid-column: 2;
 }
 
 /* Panels sit below both columns and span the full card */
 .course-box.has-tags > .course-panel {
-    flex-basis: 100%;
-    width: 100%;
+    grid-column: 1 / -1;
 }
 
 .course-topics {
@@ -406,8 +409,6 @@ main {
     flex-wrap: wrap;
     gap: 6px;
     justify-content: flex-end;
-    width: 210px;
-    flex-shrink: 0;
     padding-top: 2px;
 }
 
@@ -738,8 +739,7 @@ main {
 ----------------------------------------------------- */
 @media (max-width: 700px) {
     .course-box.has-tags {
-        flex-direction: column;
-        gap: 0;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .course-content {
