@@ -385,13 +385,20 @@ main {
 ----------------------------------------------------- */
 .course-box.has-tags {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 0 20px;
     align-items: flex-start;
 }
 
 .course-body {
     flex: 1;
     min-width: 0;
+}
+
+/* Panels sit below both columns and span the full card */
+.course-box.has-tags > .course-panel {
+    flex-basis: 100%;
+    width: 100%;
 }
 
 .course-topics {
