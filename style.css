@@ -1207,15 +1207,17 @@ footer {
 
     .footer-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 20px;
     }
 
-    /* Both groups stay on one row; logos shrink to fit */
+    /* Both groups stay on one row, centred as a block;
+       each column stays left-aligned inside itself */
     .footer-groups {
         flex-wrap: nowrap;
         gap: 18px;
-        width: 100%;
+        width: auto;
+        justify-content: center;
     }
 
     .footer-group {
