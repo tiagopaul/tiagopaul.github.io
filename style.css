@@ -162,18 +162,14 @@ header {
         display: flex;
     }
 
-    /* Descriptor stays, scaled down to share the bar */
-    .site-name {
-        font-size: 1.18rem;
-    }
-
+    /* Name keeps its full size; only the descriptor scales */
     .site-divider {
-        height: 18px;
-        margin: 0 10px;
+        height: 20px;
+        margin: 0 11px;
     }
 
     .site-descriptor {
-        font-size: 0.62rem;
+        font-size: 0.66rem;
         letter-spacing: 0.07em;
     }
 
