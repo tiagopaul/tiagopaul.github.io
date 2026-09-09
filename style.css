@@ -74,7 +74,7 @@ header {
 .site-divider {
     width: 1px;
     height: 26px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     margin: 0 14px;
     flex-shrink: 0;
 }
@@ -162,9 +162,19 @@ header {
         display: flex;
     }
 
-    .site-divider,
+    /* Descriptor stays, scaled down to share the bar */
+    .site-name {
+        font-size: 1.18rem;
+    }
+
+    .site-divider {
+        height: 18px;
+        margin: 0 10px;
+    }
+
     .site-descriptor {
-        display: none;
+        font-size: 0.62rem;
+        letter-spacing: 0.07em;
     }
 
     .hamburger {
