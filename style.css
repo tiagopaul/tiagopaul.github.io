@@ -72,12 +72,6 @@ header {
     text-decoration-skip-ink: auto;
 }
 
-/* Keep the lockup white on hover */
-.site-brand:hover .site-name,
-.site-brand:hover .site-descriptor {
-    color: white;
-}
-
 .site-brand:focus-visible {
     outline: 2px solid rgb(255, 82, 82);
     outline-offset: 4px;
