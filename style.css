@@ -260,6 +260,14 @@ main {
     margin: 0 0 10px 0;
 }
 
+/* Pronunciation line under the name */
+.home-pronounce {
+    font-size: 0.8rem;
+    color: #a2aab1;
+    margin: -4px 0 14px;
+    text-align: left;
+}
+
 .home-role {
     font-size: 1.2rem;
     color: #555;
@@ -315,6 +323,10 @@ main {
         flex-direction: column;
         text-align: center;
         align-items: center;
+    }
+
+    .home-pronounce {
+        text-align: center;
     }
 
     .intro-photo img {
