@@ -257,15 +257,21 @@ main {
     font-family: 'Roboto Slab', Georgia, serif;
     font-weight: bold;
     font-size: 3rem;
-    margin: 0 0 10px 0;
+    margin: 0;
 }
 
-/* Pronunciation line under the name */
+/* Name with its pronunciation gloss alongside */
+.home-namerow {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
 .home-pronounce {
     font-size: 0.8rem;
     color: #a2aab1;
-    margin: -4px 0 14px;
-    text-align: left;
 }
 
 .home-role {
@@ -325,8 +331,8 @@ main {
         align-items: center;
     }
 
-    .home-pronounce {
-        text-align: center;
+    .home-namerow {
+        justify-content: center;
     }
 
     .intro-photo img {
