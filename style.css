@@ -52,7 +52,13 @@ header {
     margin-left: auto;
 }
 
-/* Site name */
+/* Brand lockup: name, divider, descriptor — one link */
+.site-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
 .site-name {
     font-family: 'Roboto Slab', Georgia, serif;
     font-weight: 700;
@@ -66,9 +72,16 @@ header {
     text-decoration-skip-ink: auto;
 }
 
-/* Keep site name white on hover */
-.site-name:hover {
+/* Keep the lockup white on hover */
+.site-brand:hover .site-name,
+.site-brand:hover .site-descriptor {
     color: white;
+}
+
+.site-brand:focus-visible {
+    outline: 2px solid rgb(255, 82, 82);
+    outline-offset: 4px;
+    border-radius: 3px;
 }
 
 /* Hairline between the name and the descriptor */
