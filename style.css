@@ -641,23 +641,23 @@ main {
 ----------------------------------------------------- */
 .course-buttons {
     display: flex;
-    gap: 8px;
+    gap: 7px;
     flex-wrap: wrap;
     align-items: center;
     margin-top: auto;
 }
 
 .course-buttons .btn {
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 7px;
     background-color: rgba(21, 96, 130, 0.1);
     color: #11536f;
     text-decoration: none;
-    font-size: 0.86rem;
+    font-size: 0.81rem;
     font-weight: 400;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     transition: background-color 0.15s, color 0.15s;
 }
 
@@ -679,7 +679,7 @@ main {
 
 .btn-divider {
     width: 1px;
-    height: 22px;
+    height: 20px;
     background: #dfe3e7;
     align-self: center;
     margin: 0 8px;
@@ -687,17 +687,17 @@ main {
 
 /* Expandable panel toggles */
 .course-buttons .btn-toggle {
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 7px;
     background-color: transparent;
     color: rgb(21, 96, 130);
     border: 1px solid rgba(21, 96, 130, 0.4);
     font-family: inherit;
-    font-size: 0.86rem;
+    font-size: 0.81rem;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
 
@@ -726,8 +726,8 @@ main {
 }
 
 .btn-icon {
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
     fill: none;
     stroke: currentColor;
     stroke-width: 1.5;
@@ -835,12 +835,6 @@ main {
 
     .course-buttons {
         gap: 6px;
-    }
-
-    .course-buttons .btn,
-    .course-buttons .btn-toggle {
-        padding: 5px 10px;
-        font-size: 0.8rem;
     }
 
     .btn-divider {
