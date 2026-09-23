@@ -677,6 +677,15 @@ main {
     color: rgb(255, 82, 82);
 }
 
+/* Files and toggles each stay intact; the row breaks between the
+   two groups only when they cannot share a line. */
+.btn-group {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .btn-divider {
     width: 1px;
     height: 20px;
@@ -837,12 +846,14 @@ main {
         gap: 6px;
     }
 
+    /* When the groups stack, the vertical rule would sit stranded
+       at the end of a line, so hide it and let the row gap separate them. */
+    .course-buttons {
+        row-gap: 9px;
+    }
+
     .btn-divider {
-        flex-basis: 100%;
-        width: auto;
-        height: 0;
-        background: transparent;
-        margin: 0;
+        margin: 0 4px;
     }
 
     .flag-note {
