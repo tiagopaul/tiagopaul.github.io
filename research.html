@@ -9,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Research | Tiago Paúl</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="personal_files/tp_icon.png?v=5" />
-    <link rel="apple-touch-icon" href="personal_files/tp_icon.png?v=5" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="personal_files/tp_icon.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="personal_files/tp_icon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -152,10 +153,14 @@
 
             <!-- Buttons: files then panel toggles -->
             <div class="course-buttons">
-                <a href="research_projects/FiscMobProp.pdf" target="_blank" class="btn btn-main"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
+                <div class="btn-group btn-files">
+                    <a href="research_projects/FiscMobProp.pdf" target="_blank" class="btn btn-main"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
+                </div>
                 <span class="btn-divider" aria-hidden="true"></span>
-                <button type="button" class="btn-toggle" data-target="abstract-fiscmobprop" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn-toggle" data-target="bibtex-fiscmobprop" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
+                <div class="btn-group btn-panels">
+                    <button type="button" class="btn-toggle" data-target="abstract-fiscmobprop" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
+                    <button type="button" class="btn-toggle" data-target="bibtex-fiscmobprop" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
+                </div>
             </div>
 
             </div><!-- /.course-body -->
@@ -214,13 +219,17 @@
 
             <!-- Buttons: files then panel toggles -->
             <div class="course-buttons">
-                <a href="research_projects/HetLabMarCon.pdf" target="_blank" class="btn btn-main"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
-                <a href="research_projects/HetLabMarCon_slides.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-slides"/></svg>Slides</a>
-                <a href="research_projects/HetLabMarCon_msc.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>MSc Thesis</a>
+                <div class="btn-group btn-files">
+                    <a href="research_projects/HetLabMarCon.pdf" target="_blank" class="btn btn-main"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>Paper</a>
+                    <a href="research_projects/HetLabMarCon_slides.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-slides"/></svg>Slides</a>
+                    <a href="research_projects/HetLabMarCon_msc.pdf" target="_blank" class="btn"><svg class="btn-icon" viewBox="0 0 16 16"><use href="#icon-doc"/></svg>MSc Thesis</a>
+                </div>
                 <span class="btn-divider" aria-hidden="true"></span>
-                <button type="button" class="btn-toggle" data-target="abstract-hetlabmarcon" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn-toggle" data-target="presentations-hetlabmarcon" aria-expanded="false">Presentations <span class="chevron" aria-hidden="true">▾</span></button>
-                <button type="button" class="btn-toggle" data-target="bibtex-hetlabmarcon" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
+                <div class="btn-group btn-panels">
+                    <button type="button" class="btn-toggle" data-target="abstract-hetlabmarcon" aria-expanded="false">Abstract <span class="chevron" aria-hidden="true">▾</span></button>
+                    <button type="button" class="btn-toggle" data-target="presentations-hetlabmarcon" aria-expanded="false">Presentations <span class="chevron" aria-hidden="true">▾</span></button>
+                    <button type="button" class="btn-toggle" data-target="bibtex-hetlabmarcon" aria-expanded="false">BibTeX <span class="chevron" aria-hidden="true">▾</span></button>
+                </div>
             </div>
 
             </div><!-- /.course-body -->
