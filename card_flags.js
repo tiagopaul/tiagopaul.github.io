@@ -7,7 +7,7 @@
 ===================================================== */
 
 (function () {
-    var FLAG_MONTHS = 3;
+    var FLAG_MONTHS = 1;
 
     document.addEventListener('DOMContentLoaded', function () {
         var now = new Date();
