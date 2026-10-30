@@ -519,6 +519,16 @@ main {
 
 .flag.visible { display: inline-flex; }
 
+.flag-icon {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    flex-shrink: 0;
+}
+
 .flag[role="button"] { cursor: pointer; }
 
 .flag[role="button"]:focus-visible {
